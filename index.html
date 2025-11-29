@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SOXY - Simplicity for Your Feet</title>
+    
+    <!-- Tailwind CSS (CDN版，方便本地快速运行) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -24,10 +26,13 @@
         },
       }
     </script>
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
-</head>
+  </head>
   <body class="bg-oatmeal text-gray-900 antialiased">
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <!-- 这里的路径必须指向你的 main.tsx -->
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
