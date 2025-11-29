@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOXY - Simplicity for Your Feet</title>
+    <!-- 使用 Tailwind CDN 以简化配置，生产环境建议使用 npm 安装 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              oatmeal: '#F0EAD6',
+              'soxy-green': '#1A4D2E',
+              'soxy-green-dark': '#143D23',
+              'terracotta': '#BC4A3C',
+              'terracotta-hover': '#A33E32',
+            },
+            fontFamily: {
+              sans: ['Montserrat', 'Source Han Sans CN', 'sans-serif'],
+              serif: ['Noto Serif SC', 'serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-oatmeal text-gray-900 antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
