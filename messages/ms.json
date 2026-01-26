@@ -1,0 +1,250 @@
+{
+  "metadata": {
+    "title": "SOXYCLUB - Langganan Stokin Premium",
+    "description": "Dapatkan stokin premium dihantar ke pintu anda setiap musim"
+  },
+  "header": {
+    "howItWorks": "Cara Berfungsi",
+    "pricing": "Harga",
+    "about": "Tentang Kami",
+    "subscribe": "Langgan Sekarang"
+  },
+  "footer": {
+    "tagline": "Mudah, Premium, Sihat.",
+    "taglineEn": "Premium Cotton Subscription. Delivering globally.",
+    "quickLinks": "Pautan Pantas",
+    "support": "Sokongan",
+    "howItWorks": "Cara Berfungsi",
+    "pricing": "Harga",
+    "subscribeLink": "Langgan",
+    "aboutUs": "Tentang Kami",
+    "faq": "Soalan Lazim",
+    "shippingInfo": "Maklumat Penghantaran",
+    "contactUs": "Hubungi Kami",
+    "copyright": "Hak cipta terpelihara.",
+    "privacyPolicy": "Dasar Privasi",
+    "termsOfService": "Terma Perkhidmatan"
+  },
+  "home": {
+    "hero": {
+      "badge": "PENGHANTARAN KE SELURUH DUNIA",
+      "title": "Keselesaan Mudah,",
+      "titleLine2": "Teman Sepanjang Musim.",
+      "subtitle": "Kemudahan untuk Kaki Anda.",
+      "description1": "Langganan stokin kapas tersuai untuk anda dan keluarga.",
+      "description2": "Penghantaran global, tanpa berbulu, tanpa bau, segar setiap musim.",
+      "tagline": "Langganan Kapas Premium. Penghantaran global.",
+      "ctaSubscribe": "Mula Langgan",
+      "ctaLearnMore": "Ketahui Lebih"
+    },
+    "painPoints": {
+      "title": "Adakah Laci Anda Penuh dengan \"Stokin Zombi\"?",
+      "subtitle": "Adakah laci anda sesak dengan stokin usang?",
+      "hard": {
+        "title": "Keras & Kasar",
+        "description": "Stokin berusia enam bulan terasa seperti kadbod, kasar dan tidak menyerap."
+      },
+      "oneSize": {
+        "title": "Satu Saiz Tak Muat",
+        "description": "Satu saiz adalah pembohongan. Kaki besar merobek jari, kaki kecil tergelincir di tumit."
+      },
+      "bacteria": {
+        "title": "Bakteria Tersembunyi",
+        "description": "Dalam keadaan lembap, stokin kapas lama membiak bakteria - punca bau yang tak boleh hilang."
+      },
+      "quote": "\"Kaki anda layak mendapat yang lebih baik.\"",
+      "quoteSubtitle": "Kaki anda layak mendapat layanan yang lebih baik."
+    },
+    "model": {
+      "title": "Model SOXY",
+      "subtitle": "Mengapa Langgan?",
+      "step1": {
+        "title": "Langgan & Jimat",
+        "subtitle": "Jimat dengan langganan",
+        "description": "Tiada premium jenama, tiada sewa kedai, tiada kerugian inventori. Kami menjimatkan 50% kos dan meningkatkan kualiti fabrik.",
+        "badge": "Nilai Unggul"
+      },
+      "step2": {
+        "title": "Kurasi Tersuai",
+        "subtitle": "Pengurusan Bermusim",
+        "description": "Kami mengurus berdasarkan musim. Perniagaan, kasual, sukan - satu kotak merangkumi semua senario kehidupan. 2-3 penghantaran setahun.",
+        "badge": "Pengurusan Tanpa Usaha"
+      },
+      "step3": {
+        "title": "Kitaran Kesihatan",
+        "subtitle": "Putaran Sihat",
+        "description": "Setiap kotak baru adalah peringatan untuk membuang stokin lama. Kekalkan kaki dalam \"Kesegaran Hari Pertama\".",
+        "badge": "Kesihatan Terpaksa"
+      }
+    },
+    "engineering": {
+      "title": "Kejuruteraan",
+      "subtitle": "Janji Kualiti daripada Pakar Rantaian Bekalan",
+      "material": {
+        "title": "Bahan",
+        "description": "Kapas sikat + elastik DuPont Lycra, menyelesaikan kelonggaran, mengekalkan keanjalan berpanjangan."
+      },
+      "technology": {
+        "title": "Teknologi",
+        "description": "Teknologi antibakteria ion perak/gred AAA, direka khas untuk iklim lembap."
+      },
+      "fit": {
+        "title": "Kesesuaian",
+        "description": "Tiada \"satu saiz\". Kami menawarkan saiz tepat M/L/XL, seperti sut yang ditempah."
+      },
+      "detail": {
+        "title": "Perincian",
+        "description": "Jari kaki disambung tangan, tiada jahitan timbul di jari kaki, pengalaman lancar yang terbaik."
+      }
+    },
+    "pricing": {
+      "title": "Pilih Pelan Anda",
+      "subtitle": "Pilih pakej yang sesuai untuk anda",
+      "comparison": {
+        "mall": "Jenama pusat beli-belah",
+        "mallPrice": "18 pasang x RM15 = RM270/tahun",
+        "soxy": "Langganan SOXY",
+        "soxyPrice": "18 pasang Premium = RM99.9/tahun",
+        "daily": "Kurang dari RM 0.30 sehari."
+      },
+      "starter": {
+        "name": "Permulaan",
+        "subtitle": "Pakej Percubaan",
+        "price": "RM 19.9",
+        "pairs": "3 pasang",
+        "features": ["Kos percubaan rendah", "Penghantaran percuma", "Pembelian sekali"],
+        "cta": "Cuba Sekarang"
+      },
+      "smart": {
+        "name": "Tahun Pintar",
+        "subtitle": "Langganan Tahunan",
+        "badge": "Nilai Terbaik",
+        "price": "RM 99.9",
+        "pairs": "18 pasang/tahun",
+        "features": ["Dua penghantaran", "Penghantaran percuma + naik taraf antibakteria", "Batalkan bila-bila masa"],
+        "cta": "Mula Langgan"
+      },
+      "pro": {
+        "name": "Tahun Pro",
+        "subtitle": "Langganan Premium",
+        "price": "RM 128.8",
+        "pairs": "24 pasang/tahun",
+        "features": ["Lebih banyak reka bentuk/gaya sukan", "Penghantaran percuma + perkhidmatan VIP", "Penghantaran keutamaan"],
+        "cta": "Naik Taraf ke Premium"
+      }
+    },
+    "about": {
+      "title": "Tentang SOXY",
+      "subtitle": "Kisah Kami",
+      "quote": "\"Kami bukan sekadar menjual stokin; kami memudahkan hidup anda.\"",
+      "paragraph1": "Saya telah bekerja dalam rantaian bekalan stokin selama sedekad. Saya telah melihat stokin terbaik dijual pada harga selangit dengan logo, dan yang terburuk membanjiri pasar jalanan. Sebab saya menubuhkan SOXY adalah mudah:",
+      "paragraph1Bold": "Memecahkan keuntungan berlebihan, kembali kepada intipati.",
+      "paragraph2": "Kami percaya stokin adalah pakaian yang paling diabaikan. Tersembunyi dalam kasut, ia secara langsung menentukan keselesaan sepanjang hari anda. SOXY komited untuk menghapuskan kerumitan membeli-belah melalui langganan, supaya setiap kali anda memakai kasut, anda merasai dijaga dengan teliti.",
+      "slogan": "Mudah, Premium, Sihat.",
+      "sloganSubtitle": "Inilah SOXY."
+    },
+    "cta": {
+      "title": "Bersedia untuk menaik taraf kaki anda?",
+      "subtitle": "Bersedia untuk menyegarkan kaki anda?",
+      "button": "Mula Langganan Saya"
+    }
+  },
+  "subscribe": {
+    "title": "Mula Langganan Anda",
+    "subtitle": "Mulakan Langganan Anda",
+    "steps": {
+      "plan": "Pilih Pelan",
+      "info": "Isi Butiran",
+      "confirm": "Sahkan & Bayar"
+    },
+    "plans": {
+      "starter": {
+        "name": "Permulaan",
+        "nameCn": "Pakej Percubaan",
+        "description": "Pembelian sekali, alami kualiti",
+        "features": ["3 pasang premium", "Penghantaran percuma", "Kos percubaan rendah"]
+      },
+      "smart": {
+        "name": "Tahun Pintar",
+        "nameCn": "Langganan Tahunan",
+        "badge": "Nilai Terbaik",
+        "description": "Paling popular, nilai terbaik",
+        "features": ["18 pasang/tahun", "Dua penghantaran", "Penghantaran percuma + naik taraf antibakteria", "Batalkan bila-bila masa"]
+      },
+      "pro": {
+        "name": "Tahun Pro",
+        "nameCn": "Langganan Premium",
+        "description": "Pengalaman premium, lebih banyak pilihan",
+        "features": ["24 pasang/tahun", "Lebih banyak reka bentuk/gaya sukan", "Penghantaran percuma + perkhidmatan VIP", "Penghantaran keutamaan"]
+      }
+    },
+    "form": {
+      "shippingDetails": "Butiran Penghantaran",
+      "firstName": "Nama Pertama",
+      "lastName": "Nama Akhir",
+      "email": "Emel",
+      "phone": "Telefon",
+      "address": "Alamat",
+      "city": "Bandar",
+      "state": "Negeri",
+      "postalCode": "Poskod",
+      "country": "Negara",
+      "required": "*",
+      "placeholder": {
+        "firstName": "Masukkan nama pertama",
+        "lastName": "Masukkan nama akhir",
+        "email": "anda@emel.com",
+        "phone": "+60 12-345 6789",
+        "address": "Alamat jalan",
+        "city": "Nama bandar",
+        "state": "Nama negeri",
+        "postalCode": "12345"
+      }
+    },
+    "navigation": {
+      "next": "Seterusnya",
+      "nextInfo": "Seterusnya: Isi Butiran",
+      "nextConfirm": "Seterusnya: Sahkan Pesanan",
+      "prev": "Sebelumnya"
+    },
+    "confirmation": {
+      "title": "Ringkasan Pesanan",
+      "recipient": "Penerima",
+      "email": "Emel",
+      "phone": "Telefon",
+      "shippingAddress": "Alamat Penghantaran",
+      "shipping": "Penghantaran",
+      "free": "Percuma",
+      "total": "Jumlah",
+      "securePayment": "Pembayaran Selamat",
+      "paymentInfo": "Selepas mengklik di bawah, anda akan dibawa ke halaman pembayaran selamat. Kami menyokong kad kredit, kad debit, dan lain-lain.",
+      "confirmAndPay": "Sahkan & Bayar",
+      "pairs": "pasang"
+    },
+    "loading": "Memproses...",
+    "error": "Gagal membuat pesanan. Sila cuba lagi."
+  },
+  "account": {
+    "title": "Akaun Saya",
+    "signInPrompt": "Log masuk untuk mengurus langganan dan melihat sejarah pesanan anda.",
+    "email": "Emel",
+    "emailPlaceholder": "anda@contoh.com",
+    "password": "Kata Laluan",
+    "passwordPlaceholder": "Masukkan kata laluan anda",
+    "signIn": "Log Masuk",
+    "noAccount": "Tiada akaun?",
+    "subscribeNow": "Langgan sekarang",
+    "subscription": "Langganan",
+    "active": "Aktif",
+    "nextDelivery": "Penghantaran seterusnya",
+    "sizeStyle": "Saiz: {size} | Gaya: {style}",
+    "manageSubscription": "Urus Langganan",
+    "deliveryAddress": "Alamat Penghantaran",
+    "updateAddress": "Kemas Kini Alamat"
+  },
+  "languageSwitcher": {
+    "en": "English",
+    "zh": "中文",
+    "ms": "Bahasa Melayu"
+  }
+}

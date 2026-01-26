@@ -1,0 +1,250 @@
+{
+  "metadata": {
+    "title": "SOXYCLUB - 高端袜子订阅服务",
+    "description": "每季为您送达优质棉袜"
+  },
+  "header": {
+    "howItWorks": "了解模式",
+    "pricing": "价格方案",
+    "about": "关于我们",
+    "subscribe": "开启订阅"
+  },
+  "footer": {
+    "tagline": "简单、极致、健康。",
+    "taglineEn": "Premium Cotton Subscription. Delivering globally.",
+    "quickLinks": "快速链接",
+    "support": "客户支持",
+    "howItWorks": "了解模式",
+    "pricing": "价格方案",
+    "subscribeLink": "订阅",
+    "aboutUs": "关于我们",
+    "faq": "常见问题",
+    "shippingInfo": "配送信息",
+    "contactUs": "联系我们",
+    "copyright": "版权所有",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款"
+  },
+  "home": {
+    "hero": {
+      "badge": "全球配送中",
+      "title": "简单的舒适，",
+      "titleLine2": "四季的陪伴。",
+      "subtitle": "Simplicity for Your Feet.",
+      "description1": "为您和家人定制的棉袜订阅服务。",
+      "description2": "全球配送，告别起球与异味，每季自动焕新。",
+      "tagline": "Premium Cotton Subscription. Delivering globally.",
+      "ctaSubscribe": "开启订阅",
+      "ctaLearnMore": "了解模式"
+    },
+    "painPoints": {
+      "title": "Is Your Drawer Full of \"Zombie Socks\"?",
+      "subtitle": "你的抽屉里是不是塞满了\"僵尸袜\"？",
+      "hard": {
+        "title": "变硬 Hard & Rough",
+        "description": "穿了半年的袜子像纸板一样硬，磨脚且不吸汗。"
+      },
+      "oneSize": {
+        "title": "均码尴尬 One Size Fits None",
+        "description": "均码是个谎言。脚大的顶破脚趾，脚小的脚后跟滑落。"
+      },
+      "bacteria": {
+        "title": "细菌温床 Hidden Bacteria",
+        "description": "在湿热环境下，旧棉袜是细菌的温床，洗不掉的异味源于此。"
+      },
+      "quote": "\"Your feet deserve better.\"",
+      "quoteSubtitle": "你的双脚值得更好的待遇。"
+    },
+    "model": {
+      "title": "The SOXY Model",
+      "subtitle": "为什么选择订阅？",
+      "step1": {
+        "title": "Subscribe & Save",
+        "subtitle": "订阅即省",
+        "description": "去除品牌溢价、去除门店租金、去除库存损耗。我们将这 50% 的成本节省下来，升级面料品质。",
+        "badge": "越级性价比"
+      },
+      "step2": {
+        "title": "Custom Curation",
+        "subtitle": "按季托管",
+        "description": "我们根据季节为您搭配。商务、休闲、运动，一盒覆盖您的所有生活场景。一年发货2-3次，确保持续的新鲜感。",
+        "badge": "无脑托管"
+      },
+      "step3": {
+        "title": "Health Cycle",
+        "subtitle": "健康循环",
+        "description": "每当我们寄来新盒子，就是提醒您扔掉旧袜子的时候。保持足部环境始终处于\"First Day Freshness\"。",
+        "badge": "强制健康"
+      }
+    },
+    "engineering": {
+      "title": "The Engineering",
+      "subtitle": "供应链专家的品质承诺",
+      "material": {
+        "title": "Material 面料",
+        "description": "选用精梳棉 + 杜邦莱卡橡筋，解决松垮问题，保持弹性持久。"
+      },
+      "technology": {
+        "title": "Technology 科技",
+        "description": "银离子/AAA级抗菌技术，针对湿热气候特别强调防臭功能。"
+      },
+      "fit": {
+        "title": "The Fit 尺码革命",
+        "description": "我们不做\"均码\"。提供 M / L / XL 精细分码，像定制西装一样贴合。"
+      },
+      "detail": {
+        "title": "Detail 细节",
+        "description": "手工对目 (Hand-linked toe)，脚趾处无凸起骨位，极致无感体验。"
+      }
+    },
+    "pricing": {
+      "title": "Choose Your Plan",
+      "subtitle": "选择适合您的套餐",
+      "comparison": {
+        "mall": "商场品牌",
+        "mallPrice": "18双 x RM15 = RM270/年",
+        "soxy": "SOXY 订阅",
+        "soxyPrice": "18双 Premium = RM99.9/年",
+        "daily": "每天不到3毛钱。"
+      },
+      "starter": {
+        "name": "Starter",
+        "subtitle": "体验装",
+        "price": "RM 19.9",
+        "pairs": "3 双袜子",
+        "features": ["试错成本低", "免运费", "一次性购买"],
+        "cta": "立即体验"
+      },
+      "smart": {
+        "name": "Smart Year",
+        "subtitle": "年度订阅",
+        "badge": "Best Value",
+        "price": "RM 99.9",
+        "pairs": "18 双袜子 / 年",
+        "features": ["分两次发货", "免运费 + 抗菌升级", "随时可取消"],
+        "cta": "开启订阅"
+      },
+      "pro": {
+        "name": "Pro Year",
+        "subtitle": "豪华订阅",
+        "price": "RM 128.8",
+        "pairs": "24 双袜子 / 年",
+        "features": ["更多设计款/运动款", "免运费 + VIP 客服", "优先发货"],
+        "cta": "升级豪华版"
+      }
+    },
+    "about": {
+      "title": "About SOXY",
+      "subtitle": "我们的故事",
+      "quote": "\"We are not just selling socks; we are simplifying your life.\"",
+      "paragraph1": "我在袜子供应链行业深耕了十年。我看过最好的袜子被贴上LOGO卖出天价，也看过最差的袜子充斥地摊。我创立SOXY的初衷很简单：",
+      "paragraph1Bold": "打破暴利，回归本质。",
+      "paragraph2": "我们认为，袜子是一个人最被忽视的衣物。它藏在鞋子里，却直接决定了你一整天的舒适度。SOXY 致力于通过\"订阅制\"模式，消除你选购的烦恼，让你每天穿上鞋的那一刻，都能感受到被精心照顾的舒适。",
+      "slogan": "简单、极致、健康。",
+      "sloganSubtitle": "这就是 SOXY。"
+    },
+    "cta": {
+      "title": "Ready to upgrade your feet?",
+      "subtitle": "准备好让你的双脚焕然一新了吗？",
+      "button": "Start My Subscription"
+    }
+  },
+  "subscribe": {
+    "title": "开启订阅",
+    "subtitle": "Start Your Subscription",
+    "steps": {
+      "plan": "选择套餐",
+      "info": "填写信息",
+      "confirm": "确认支付"
+    },
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "nameCn": "体验装",
+        "description": "一次性购买，体验品质",
+        "features": ["3 双精选袜子", "免运费", "试错成本低"]
+      },
+      "smart": {
+        "name": "Smart Year",
+        "nameCn": "年度订阅",
+        "badge": "Best Value",
+        "description": "最受欢迎，超值之选",
+        "features": ["18 双袜子/年", "分两次发货", "免运费 + 抗菌升级", "随时可取消"]
+      },
+      "pro": {
+        "name": "Pro Year",
+        "nameCn": "豪华订阅",
+        "description": "尊享体验，更多选择",
+        "features": ["24 双袜子/年", "更多设计款/运动款", "免运费 + VIP 客服", "优先发货"]
+      }
+    },
+    "form": {
+      "shippingDetails": "收货信息 Shipping Details",
+      "firstName": "名 First Name",
+      "lastName": "姓 Last Name",
+      "email": "邮箱 Email",
+      "phone": "电话 Phone",
+      "address": "地址 Address",
+      "city": "城市 City",
+      "state": "州/省 State",
+      "postalCode": "邮编 Postal Code",
+      "country": "国家 Country",
+      "required": "*",
+      "placeholder": {
+        "firstName": "请输入名字",
+        "lastName": "请输入姓氏",
+        "email": "your@email.com",
+        "phone": "+60 12-345 6789",
+        "address": "街道地址 Street address",
+        "city": "城市名称",
+        "state": "州/省名称",
+        "postalCode": "12345"
+      }
+    },
+    "navigation": {
+      "next": "下一步",
+      "nextInfo": "下一步：填写信息",
+      "nextConfirm": "下一步：确认订单",
+      "prev": "上一步"
+    },
+    "confirmation": {
+      "title": "订单确认 Order Summary",
+      "recipient": "收件人",
+      "email": "邮箱",
+      "phone": "电话",
+      "shippingAddress": "收货地址",
+      "shipping": "运费",
+      "free": "免费",
+      "total": "总计 Total",
+      "securePayment": "安全支付 Secure Payment",
+      "paymentInfo": "点击下方按钮后，您将进入安全的支付页面完成付款。我们支持信用卡、借记卡等多种支付方式。",
+      "confirmAndPay": "确认并支付",
+      "pairs": "双袜子"
+    },
+    "loading": "处理中...",
+    "error": "创建订单失败，请稍后重试。"
+  },
+  "account": {
+    "title": "我的账户",
+    "signInPrompt": "登录以管理您的订阅和查看订单历史。",
+    "email": "邮箱",
+    "emailPlaceholder": "you@example.com",
+    "password": "密码",
+    "passwordPlaceholder": "请输入密码",
+    "signIn": "登录",
+    "noAccount": "还没有账户？",
+    "subscribeNow": "立即订阅",
+    "subscription": "订阅状态",
+    "active": "活跃",
+    "nextDelivery": "下次配送",
+    "sizeStyle": "尺码: {size} | 风格: {style}",
+    "manageSubscription": "管理订阅",
+    "deliveryAddress": "配送地址",
+    "updateAddress": "更新地址"
+  },
+  "languageSwitcher": {
+    "en": "English",
+    "zh": "中文",
+    "ms": "Bahasa Melayu"
+  }
+}

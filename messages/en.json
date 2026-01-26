@@ -1,0 +1,250 @@
+{
+  "metadata": {
+    "title": "SOXYCLUB - Premium Sock Subscription",
+    "description": "Get premium socks delivered to your door every season"
+  },
+  "header": {
+    "howItWorks": "How It Works",
+    "pricing": "Pricing",
+    "about": "About",
+    "subscribe": "Subscribe Now"
+  },
+  "footer": {
+    "tagline": "Simple, Premium, Healthy.",
+    "taglineEn": "Premium Cotton Subscription. Delivering globally.",
+    "quickLinks": "Quick Links",
+    "support": "Support",
+    "howItWorks": "How It Works",
+    "pricing": "Pricing",
+    "subscribeLink": "Subscribe",
+    "aboutUs": "About Us",
+    "faq": "FAQ",
+    "shippingInfo": "Shipping Info",
+    "contactUs": "Contact Us",
+    "copyright": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "home": {
+    "hero": {
+      "badge": "NOW SHIPPING WORLDWIDE",
+      "title": "Simple Comfort,",
+      "titleLine2": "Companion for All Seasons.",
+      "subtitle": "Simplicity for Your Feet.",
+      "description1": "Custom cotton sock subscription for you and your family.",
+      "description2": "Global delivery, no pilling, no odor, refresh every season.",
+      "tagline": "Premium Cotton Subscription. Delivering globally.",
+      "ctaSubscribe": "Start Subscription",
+      "ctaLearnMore": "Learn More"
+    },
+    "painPoints": {
+      "title": "Is Your Drawer Full of \"Zombie Socks\"?",
+      "subtitle": "Are your drawers stuffed with worn-out socks?",
+      "hard": {
+        "title": "Hard & Rough",
+        "description": "Six-month-old socks feel like cardboard, rough and non-absorbent."
+      },
+      "oneSize": {
+        "title": "One Size Fits None",
+        "description": "One size is a lie. Big feet break through toes, small feet slip at heels."
+      },
+      "bacteria": {
+        "title": "Hidden Bacteria",
+        "description": "In humid conditions, old cotton socks breed bacteria - source of unremovable odor."
+      },
+      "quote": "\"Your feet deserve better.\"",
+      "quoteSubtitle": "Your feet deserve better treatment."
+    },
+    "model": {
+      "title": "The SOXY Model",
+      "subtitle": "Why Subscribe?",
+      "step1": {
+        "title": "Subscribe & Save",
+        "subtitle": "Save with subscription",
+        "description": "No brand premium, no store rent, no inventory loss. We save 50% of costs and upgrade fabric quality.",
+        "badge": "Superior Value"
+      },
+      "step2": {
+        "title": "Custom Curation",
+        "subtitle": "Seasonal Management",
+        "description": "We curate based on seasons. Business, casual, sports - one box covers all life scenarios. 2-3 deliveries per year.",
+        "badge": "Hands-free Management"
+      },
+      "step3": {
+        "title": "Health Cycle",
+        "subtitle": "Healthy Rotation",
+        "description": "Each new box is your reminder to toss old socks. Keep feet in \"First Day Freshness\".",
+        "badge": "Enforced Health"
+      }
+    },
+    "engineering": {
+      "title": "The Engineering",
+      "subtitle": "Quality Promise from Supply Chain Experts",
+      "material": {
+        "title": "Material",
+        "description": "Combed cotton + DuPont Lycra elastic, solving looseness, maintaining lasting elasticity."
+      },
+      "technology": {
+        "title": "Technology",
+        "description": "Silver ion/AAA-grade antibacterial technology, specially designed for humid climates."
+      },
+      "fit": {
+        "title": "The Fit",
+        "description": "No \"one size\". We offer M/L/XL precise sizing, like tailored suits."
+      },
+      "detail": {
+        "title": "Detail",
+        "description": "Hand-linked toe, no raised seams at toes, ultimate seamless experience."
+      }
+    },
+    "pricing": {
+      "title": "Choose Your Plan",
+      "subtitle": "Select the right package for you",
+      "comparison": {
+        "mall": "Mall brands",
+        "mallPrice": "18 pairs x RM15 = RM270/year",
+        "soxy": "SOXY Subscription",
+        "soxyPrice": "18 pairs Premium = RM99.9/year",
+        "daily": "Less than RM 0.30 per day."
+      },
+      "starter": {
+        "name": "Starter",
+        "subtitle": "Trial Pack",
+        "price": "RM 19.9",
+        "pairs": "3 pairs",
+        "features": ["Low trial cost", "Free shipping", "One-time purchase"],
+        "cta": "Try Now"
+      },
+      "smart": {
+        "name": "Smart Year",
+        "subtitle": "Annual Subscription",
+        "badge": "Best Value",
+        "price": "RM 99.9",
+        "pairs": "18 pairs/year",
+        "features": ["Two deliveries", "Free shipping + antibacterial upgrade", "Cancel anytime"],
+        "cta": "Start Subscription"
+      },
+      "pro": {
+        "name": "Pro Year",
+        "subtitle": "Premium Subscription",
+        "price": "RM 128.8",
+        "pairs": "24 pairs/year",
+        "features": ["More designs/sports styles", "Free shipping + VIP service", "Priority delivery"],
+        "cta": "Upgrade to Premium"
+      }
+    },
+    "about": {
+      "title": "About SOXY",
+      "subtitle": "Our Story",
+      "quote": "\"We are not just selling socks; we are simplifying your life.\"",
+      "paragraph1": "I have worked in sock supply chains for a decade. I've seen the best socks sold at sky-high prices with logos, and the worst ones flooding street markets. My reason for founding SOXY is simple: break the profiteering, return to essence.",
+      "paragraph1Bold": "Break the profiteering, return to essence.",
+      "paragraph2": "We believe socks are the most overlooked clothing item. Hidden in shoes, they directly determine your all-day comfort. SOXY is committed to eliminating shopping hassles through subscription, so every time you put on shoes, you feel carefully cared for.",
+      "slogan": "Simple, Premium, Healthy.",
+      "sloganSubtitle": "This is SOXY."
+    },
+    "cta": {
+      "title": "Ready to upgrade your feet?",
+      "subtitle": "Ready to refresh your feet?",
+      "button": "Start My Subscription"
+    }
+  },
+  "subscribe": {
+    "title": "Start Your Subscription",
+    "subtitle": "Start Your Subscription",
+    "steps": {
+      "plan": "Choose Plan",
+      "info": "Fill Details",
+      "confirm": "Confirm & Pay"
+    },
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "nameCn": "Trial Pack",
+        "description": "One-time purchase, experience quality",
+        "features": ["3 premium pairs", "Free shipping", "Low trial cost"]
+      },
+      "smart": {
+        "name": "Smart Year",
+        "nameCn": "Annual Subscription",
+        "badge": "Best Value",
+        "description": "Most popular, best value",
+        "features": ["18 pairs/year", "Two deliveries", "Free shipping + antibacterial upgrade", "Cancel anytime"]
+      },
+      "pro": {
+        "name": "Pro Year",
+        "nameCn": "Premium Subscription",
+        "description": "Premium experience, more choices",
+        "features": ["24 pairs/year", "More designs/sports styles", "Free shipping + VIP service", "Priority delivery"]
+      }
+    },
+    "form": {
+      "shippingDetails": "Shipping Details",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "city": "City",
+      "state": "State/Province",
+      "postalCode": "Postal Code",
+      "country": "Country",
+      "required": "*",
+      "placeholder": {
+        "firstName": "Enter first name",
+        "lastName": "Enter last name",
+        "email": "your@email.com",
+        "phone": "+60 12-345 6789",
+        "address": "Street address",
+        "city": "City name",
+        "state": "State/Province name",
+        "postalCode": "12345"
+      }
+    },
+    "navigation": {
+      "next": "Next",
+      "nextInfo": "Next: Fill Details",
+      "nextConfirm": "Next: Confirm Order",
+      "prev": "Previous"
+    },
+    "confirmation": {
+      "title": "Order Summary",
+      "recipient": "Recipient",
+      "email": "Email",
+      "phone": "Phone",
+      "shippingAddress": "Shipping Address",
+      "shipping": "Shipping",
+      "free": "Free",
+      "total": "Total",
+      "securePayment": "Secure Payment",
+      "paymentInfo": "After clicking below, you will be taken to a secure payment page. We support credit cards, debit cards, and more.",
+      "confirmAndPay": "Confirm & Pay",
+      "pairs": "pairs"
+    },
+    "loading": "Processing...",
+    "error": "Failed to create order. Please try again."
+  },
+  "account": {
+    "title": "My Account",
+    "signInPrompt": "Sign in to manage your subscription and view your order history.",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "signIn": "Sign In",
+    "noAccount": "Don't have an account?",
+    "subscribeNow": "Subscribe now",
+    "subscription": "Subscription",
+    "active": "Active",
+    "nextDelivery": "Next delivery",
+    "sizeStyle": "Size: {size} | Style: {style}",
+    "manageSubscription": "Manage Subscription",
+    "deliveryAddress": "Delivery Address",
+    "updateAddress": "Update Address"
+  },
+  "languageSwitcher": {
+    "en": "English",
+    "zh": "Chinese",
+    "ms": "Malay"
+  }
+}
