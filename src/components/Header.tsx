@@ -4,10 +4,12 @@ import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslations("header");
+  const { isLoggedIn, customer } = useAuth();
 
   return (
     <header className="sticky top-0 z-50 bg-[#F5F0E8] border-b border-[#E5DFD5]">
@@ -42,6 +44,28 @@ export default function Header() {
               {t("about")}
             </Link>
             <LanguageSwitcher />
+            {/* User icon / Account link */}
+            <Link
+              href="/account"
+              className="flex items-center gap-1.5 text-gray-700 hover:text-[#2D5A4A] transition font-medium"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+              <span className="text-sm">
+                {isLoggedIn ? customer?.firstName || t("account") : t("signIn")}
+              </span>
+            </Link>
             <Link
               href="/subscribe"
               className="bg-[#A94438] text-white px-6 py-2.5 rounded-full hover:bg-[#8B3830] transition font-medium"
@@ -108,6 +132,27 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t("about")}
+              </Link>
+              {/* Mobile account link */}
+              <Link
+                href="/account"
+                className="flex items-center gap-2 text-gray-700 hover:text-[#2D5A4A] transition font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                  />
+                </svg>
+                {isLoggedIn ? customer?.firstName || t("account") : t("signIn")}
               </Link>
               <Link
                 href="/subscribe"

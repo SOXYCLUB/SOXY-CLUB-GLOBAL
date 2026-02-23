@@ -39,3 +39,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel
+.env*.local
+
+# screenshots & docs
+*.png
+*.PNG
+*.jpg
+*.JPG
+*.docx
+nul
+shopify.app.toml
+shopify cli.png

@@ -1,14 +1,19 @@
-const domain = process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN!;
-const storefrontAccessToken = process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN!;
+const domain = process.env.SHOPIFY_STORE_DOMAIN!;
+const storefrontAccessToken = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN!;
 
 const endpoint = `https://${domain}/api/2024-01/graphql.json`;
 
-type ShopifyResponse<T> = {
-  data: T;
-  errors?: { message: string }[];
+type ShopifyError = {
+  message: string;
+  extensions?: { code?: string };
 };
 
-async function shopifyFetch<T>(query: string, variables: Record<string, unknown> = {}): Promise<T> {
+type ShopifyResponse<T> = {
+  data: T;
+  errors?: ShopifyError[];
+};
+
+export async function shopifyFetch<T>(query: string, variables: Record<string, unknown> = {}): Promise<T> {
   const response = await fetch(endpoint, {
     method: "POST",
     headers: {
@@ -22,50 +27,48 @@ async function shopifyFetch<T>(query: string, variables: Record<string, unknown>
 
   if (json.errors) {
     console.error("Shopify API Errors:", json.errors);
-    throw new Error(json.errors.map((e) => e.message).join("\n"));
+    throw new Error(
+      json.errors
+        .map((e) => e.message || e.extensions?.code || "Unknown Shopify error")
+        .join("\n")
+    );
   }
 
   return json.data;
 }
 
-// Checkout 输入类型
-interface CheckoutInput {
-  email: string;
-  shippingAddress: {
-    firstName: string;
-    lastName: string;
-    address1: string;
-    city: string;
-    province?: string;
-    zip: string;
-    country: string;
-    phone: string;
-  };
-  lineItems?: {
-    variantId: string;
+// Cart 输入类型（替代已弃用的 Checkout API）
+interface CartInput {
+  email?: string;
+  countryCode?: string;
+  customerAccessToken?: string;
+  lines: {
+    merchandiseId: string;
     quantity: number;
   }[];
-  customAttributes?: {
+  attributes?: {
     key: string;
     value: string;
   }[];
 }
 
-// 创建 Checkout（不带商品，用于订阅场景）
-export async function createCheckout(input: CheckoutInput) {
+// 创建 Cart 并获取 checkoutUrl（Shopify Cart API）
+export async function createCart(input: CartInput) {
   const query = `
-    mutation checkoutCreate($input: CheckoutCreateInput!) {
-      checkoutCreate(input: $input) {
-        checkout {
+    mutation cartCreate($input: CartInput!) {
+      cartCreate(input: $input) {
+        cart {
           id
-          webUrl
-          totalPriceV2 {
-            amount
-            currencyCode
+          checkoutUrl
+          totalQuantity
+          cost {
+            totalAmount {
+              amount
+              currencyCode
+            }
           }
         }
-        checkoutUserErrors {
-          code
+        userErrors {
           field
           message
         }
@@ -73,43 +76,51 @@ export async function createCheckout(input: CheckoutInput) {
     }
   `;
 
-  type CheckoutResponse = {
-    checkoutCreate: {
-      checkout: {
+  type CartResponse = {
+    cartCreate: {
+      cart: {
         id: string;
-        webUrl: string;
-        totalPriceV2: {
-          amount: string;
-          currencyCode: string;
+        checkoutUrl: string;
+        totalQuantity: number;
+        cost: {
+          totalAmount: {
+            amount: string;
+            currencyCode: string;
+          };
         };
       } | null;
-      checkoutUserErrors: {
-        code: string;
+      userErrors: {
         field: string[];
         message: string;
       }[];
     };
   };
 
-  const checkoutInput: Record<string, unknown> = {
-    email: input.email,
-    shippingAddress: input.shippingAddress,
-    customAttributes: input.customAttributes || [],
+  const buyerIdentity: Record<string, unknown> = {
+    countryCode: input.countryCode || "MY",
   };
-
-  if (input.lineItems && input.lineItems.length > 0) {
-    checkoutInput.lineItems = input.lineItems;
+  if (input.email) {
+    buyerIdentity.email = input.email;
+  }
+  if (input.customerAccessToken) {
+    buyerIdentity.customerAccessToken = input.customerAccessToken;
   }
 
-  const data = await shopifyFetch<CheckoutResponse>(query, { input: checkoutInput });
+  const data = await shopifyFetch<CartResponse>(query, {
+    input: {
+      lines: input.lines,
+      buyerIdentity,
+      attributes: input.attributes || [],
+    },
+  });
 
-  if (data.checkoutCreate.checkoutUserErrors.length > 0) {
+  if (data.cartCreate.userErrors.length > 0) {
     throw new Error(
-      data.checkoutCreate.checkoutUserErrors.map((e) => e.message).join("\n")
+      data.cartCreate.userErrors.map((e) => e.message).join("\n")
     );
   }
 
-  return data.checkoutCreate.checkout;
+  return data.cartCreate.cart;
 }
 
 // 获取所有产品

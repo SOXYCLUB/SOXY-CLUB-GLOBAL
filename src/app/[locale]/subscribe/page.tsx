@@ -4,67 +4,27 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 
 type Plan = "starter" | "smart" | "pro";
-type Step = 1 | 2 | 3;
-
-interface FormData {
-  plan: Plan;
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  address: string;
-  city: string;
-  state: string;
-  postalCode: string;
-  country: string;
-}
+type Step = 1 | 2;
 
 const planPrices = {
   starter: { price: 19.9, pairs: 3 },
   smart: { price: 99.9, pairs: 18 },
-  pro: { price: 128.8, pairs: 24 },
+  pro: { price: 129.0, pairs: 24 },
 };
 
 export default function SubscribePage() {
   const t = useTranslations("subscribe");
   const [step, setStep] = useState<Step>(1);
   const [isLoading, setIsLoading] = useState(false);
-  const [formData, setFormData] = useState<FormData>({
-    plan: "smart",
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    address: "",
-    city: "",
-    state: "",
-    postalCode: "",
-    country: "Malaysia",
-  });
+  const [plan, setPlan] = useState<Plan>("smart");
 
-  const selectedPlan = planPrices[formData.plan];
-  const planTranslations = t.raw(`plans.${formData.plan}`) as {
+  const selectedPlan = planPrices[plan];
+  const planTranslations = t.raw(`plans.${plan}`) as {
     name: string;
     nameCn: string;
     description: string;
     features: string[];
     badge?: string;
-  };
-
-  const updateForm = (field: keyof FormData, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
-  };
-
-  const handlePlanSelect = (plan: Plan) => {
-    updateForm("plan", plan);
-  };
-
-  const handleNextStep = () => {
-    if (step < 3) setStep((step + 1) as Step);
-  };
-
-  const handlePrevStep = () => {
-    if (step > 1) setStep((step - 1) as Step);
   };
 
   const handleSubmit = async () => {
@@ -76,7 +36,7 @@ export default function SubscribePage() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ plan, email: "" }),
       });
 
       const data = await response.json();
@@ -97,15 +57,6 @@ export default function SubscribePage() {
     }
   };
 
-  const isStep2Valid =
-    formData.firstName &&
-    formData.lastName &&
-    formData.email &&
-    formData.phone &&
-    formData.address &&
-    formData.city &&
-    formData.postalCode;
-
   return (
     <div className="min-h-screen bg-[#F5F0E8]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -117,7 +68,7 @@ export default function SubscribePage() {
 
         {/* Progress Steps */}
         <div className="flex items-center justify-center mb-12">
-          {[1, 2, 3].map((s) => (
+          {[1, 2].map((s) => (
             <div key={s} className="flex items-center">
               <div
                 className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition ${
@@ -128,7 +79,7 @@ export default function SubscribePage() {
               >
                 {s}
               </div>
-              {s < 3 && (
+              {s < 2 && (
                 <div
                   className={`w-16 md:w-24 h-1 mx-2 transition ${
                     step > s ? "bg-[#2D5A4A]" : "bg-gray-200"
@@ -145,9 +96,6 @@ export default function SubscribePage() {
             {t("steps.plan")}
           </span>
           <span className={step === 2 ? "text-[#2D5A4A] font-medium" : "text-gray-400"}>
-            {t("steps.info")}
-          </span>
-          <span className={step === 3 ? "text-[#2D5A4A] font-medium" : "text-gray-400"}>
             {t("steps.confirm")}
           </span>
         </div>
@@ -157,7 +105,7 @@ export default function SubscribePage() {
           <div className="space-y-6">
             <div className="grid md:grid-cols-3 gap-6">
               {(["starter", "smart", "pro"] as Plan[]).map((planKey) => {
-                const plan = t.raw(`plans.${planKey}`) as {
+                const planInfo = t.raw(`plans.${planKey}`) as {
                   name: string;
                   nameCn: string;
                   description: string;
@@ -165,25 +113,25 @@ export default function SubscribePage() {
                   badge?: string;
                 };
                 const planPrice = planPrices[planKey];
-                const isSelected = formData.plan === planKey;
+                const isSelected = plan === planKey;
                 return (
                   <button
                     key={planKey}
-                    onClick={() => handlePlanSelect(planKey)}
+                    onClick={() => setPlan(planKey)}
                     className={`relative bg-white rounded-2xl p-6 text-left transition border-2 ${
                       isSelected
                         ? "border-[#2D5A4A] shadow-lg"
                         : "border-transparent hover:border-gray-300"
                     }`}
                   >
-                    {plan.badge && (
+                    {planInfo.badge && (
                       <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#A94438] text-white px-3 py-1 rounded-full text-xs font-medium">
-                        {plan.badge}
+                        {planInfo.badge}
                       </div>
                     )}
                     <div className="mb-4">
-                      <h3 className="text-lg font-bold">{plan.name}</h3>
-                      <p className="text-sm text-gray-500">{plan.nameCn}</p>
+                      <h3 className="text-lg font-bold">{planInfo.name}</h3>
+                      <p className="text-sm text-gray-500">{planInfo.nameCn}</p>
                     </div>
                     <div className="mb-4">
                       <span className="text-3xl font-bold">RM {planPrice.price}</span>
@@ -191,9 +139,9 @@ export default function SubscribePage() {
                         / {planPrice.pairs} {t("confirmation.pairs")}
                       </span>
                     </div>
-                    <p className="text-sm text-gray-600 mb-4">{plan.description}</p>
+                    <p className="text-sm text-gray-600 mb-4">{planInfo.description}</p>
                     <ul className="space-y-2">
-                      {plan.features.map((feature: string, i: number) => (
+                      {planInfo.features.map((feature: string, i: number) => (
                         <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
                           <svg
                             className="w-4 h-4 text-[#2D5A4A] flex-shrink-0"
@@ -232,168 +180,8 @@ export default function SubscribePage() {
 
             <div className="flex justify-center pt-6">
               <button
-                onClick={handleNextStep}
+                onClick={() => setStep(2)}
                 className="bg-[#A94438] text-white px-10 py-4 rounded-full font-medium hover:bg-[#8B3830] transition"
-              >
-                {t("navigation.nextInfo")}
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Step 2: User Information */}
-        {step === 2 && (
-          <div className="bg-white rounded-2xl p-8 shadow-sm">
-            <h2 className="text-xl font-bold mb-6">{t("form.shippingDetails")}</h2>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* First Name */}
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  {t("form.firstName")} <span className="text-red-500">{t("form.required")}</span>
-                </label>
-                <input
-                  type="text"
-                  value={formData.firstName}
-                  onChange={(e) => updateForm("firstName", e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A4A] focus:border-transparent outline-none transition"
-                  placeholder={t("form.placeholder.firstName")}
-                />
-              </div>
-
-              {/* Last Name */}
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  {t("form.lastName")} <span className="text-red-500">{t("form.required")}</span>
-                </label>
-                <input
-                  type="text"
-                  value={formData.lastName}
-                  onChange={(e) => updateForm("lastName", e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A4A] focus:border-transparent outline-none transition"
-                  placeholder={t("form.placeholder.lastName")}
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  {t("form.email")} <span className="text-red-500">{t("form.required")}</span>
-                </label>
-                <input
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => updateForm("email", e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A4A] focus:border-transparent outline-none transition"
-                  placeholder={t("form.placeholder.email")}
-                />
-              </div>
-
-              {/* Phone */}
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  {t("form.phone")} <span className="text-red-500">{t("form.required")}</span>
-                </label>
-                <input
-                  type="tel"
-                  value={formData.phone}
-                  onChange={(e) => updateForm("phone", e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A4A] focus:border-transparent outline-none transition"
-                  placeholder={t("form.placeholder.phone")}
-                />
-              </div>
-
-              {/* Address */}
-              <div className="md:col-span-2">
-                <label className="block text-sm font-medium mb-2">
-                  {t("form.address")} <span className="text-red-500">{t("form.required")}</span>
-                </label>
-                <input
-                  type="text"
-                  value={formData.address}
-                  onChange={(e) => updateForm("address", e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A4A] focus:border-transparent outline-none transition"
-                  placeholder={t("form.placeholder.address")}
-                />
-              </div>
-
-              {/* City */}
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  {t("form.city")} <span className="text-red-500">{t("form.required")}</span>
-                </label>
-                <input
-                  type="text"
-                  value={formData.city}
-                  onChange={(e) => updateForm("city", e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A4A] focus:border-transparent outline-none transition"
-                  placeholder={t("form.placeholder.city")}
-                />
-              </div>
-
-              {/* State */}
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  {t("form.state")}
-                </label>
-                <input
-                  type="text"
-                  value={formData.state}
-                  onChange={(e) => updateForm("state", e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A4A] focus:border-transparent outline-none transition"
-                  placeholder={t("form.placeholder.state")}
-                />
-              </div>
-
-              {/* Postal Code */}
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  {t("form.postalCode")} <span className="text-red-500">{t("form.required")}</span>
-                </label>
-                <input
-                  type="text"
-                  value={formData.postalCode}
-                  onChange={(e) => updateForm("postalCode", e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A4A] focus:border-transparent outline-none transition"
-                  placeholder={t("form.placeholder.postalCode")}
-                />
-              </div>
-
-              {/* Country */}
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  {t("form.country")} <span className="text-red-500">{t("form.required")}</span>
-                </label>
-                <select
-                  value={formData.country}
-                  onChange={(e) => updateForm("country", e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A4A] focus:border-transparent outline-none transition bg-white"
-                >
-                  <option value="Malaysia">Malaysia</option>
-                  <option value="Singapore">Singapore</option>
-                  <option value="China">China</option>
-                  <option value="Indonesia">Indonesia</option>
-                  <option value="Thailand">Thailand</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-            </div>
-
-            <div className="flex justify-between pt-8">
-              <button
-                onClick={handlePrevStep}
-                className="px-8 py-3 rounded-full font-medium border border-gray-300 hover:border-gray-400 transition"
-              >
-                {t("navigation.prev")}
-              </button>
-              <button
-                onClick={handleNextStep}
-                disabled={!isStep2Valid}
-                className={`px-10 py-3 rounded-full font-medium transition ${
-                  isStep2Valid
-                    ? "bg-[#A94438] text-white hover:bg-[#8B3830]"
-                    : "bg-gray-300 text-gray-500 cursor-not-allowed"
-                }`}
               >
                 {t("navigation.nextConfirm")}
               </button>
@@ -401,8 +189,8 @@ export default function SubscribePage() {
           </div>
         )}
 
-        {/* Step 3: Confirmation & Payment */}
-        {step === 3 && (
+        {/* Step 2: Confirmation & Checkout */}
+        {step === 2 && (
           <div className="space-y-6">
             {/* Order Summary */}
             <div className="bg-white rounded-2xl p-8 shadow-sm">
@@ -420,29 +208,29 @@ export default function SubscribePage() {
                 </div>
               </div>
 
-              <div className="space-y-3 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-gray-500">{t("confirmation.recipient")}</span>
-                  <span>{formData.firstName} {formData.lastName}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-500">{t("confirmation.email")}</span>
-                  <span>{formData.email}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-500">{t("confirmation.phone")}</span>
-                  <span>{formData.phone}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-500">{t("confirmation.shippingAddress")}</span>
-                  <span className="text-right max-w-[60%]">
-                    {formData.address}, {formData.city}
-                    {formData.state && `, ${formData.state}`}, {formData.postalCode}, {formData.country}
-                  </span>
-                </div>
+              {/* Plan Features */}
+              <div className="mb-6">
+                <ul className="space-y-2">
+                  {planTranslations.features.map((feature: string, i: number) => (
+                    <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
+                      <svg
+                        className="w-4 h-4 text-[#2D5A4A] flex-shrink-0"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              <div className="border-t border-gray-200 mt-6 pt-6">
+              <div className="border-t border-gray-200 pt-6">
                 <div className="flex justify-between items-center">
                   <span className="text-gray-500">{t("confirmation.shipping")}</span>
                   <span className="text-[#2D5A4A] font-medium">{t("confirmation.free")}</span>
@@ -472,7 +260,7 @@ export default function SubscribePage() {
             {/* Action Buttons */}
             <div className="flex justify-between pt-4">
               <button
-                onClick={handlePrevStep}
+                onClick={() => setStep(1)}
                 className="px-8 py-3 rounded-full font-medium border border-gray-300 hover:border-gray-400 transition"
               >
                 {t("navigation.prev")}
