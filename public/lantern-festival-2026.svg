@@ -1,0 +1,315 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" width="800" height="1100">
+  <defs>
+    <!-- Night sky gradient -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a2e;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#1a0a3e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d0a1a;stop-opacity:1" />
+    </linearGradient>
+    <!-- Moon glow -->
+    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#fffde7;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#fff9c4;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#ffcc02;stop-opacity:0" />
+    </radialGradient>
+    <!-- Red lantern gradient -->
+    <radialGradient id="lanternRed" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e31e24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b0000;stop-opacity:1" />
+    </radialGradient>
+    <!-- Gold lantern gradient -->
+    <radialGradient id="lanternGold" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" style="stop-color:#ffe066;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ffa500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b05000;stop-opacity:1" />
+    </radialGradient>
+    <!-- Lantern glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Soft glow -->
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Moon filter -->
+    <filter id="moonFilter" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="1100" fill="url(#skyGrad)" />
+
+  <!-- Stars -->
+  <g opacity="0.8">
+    <circle cx="60" cy="60" r="1.2" fill="white" opacity="0.9"/>
+    <circle cx="130" cy="35" r="0.8" fill="white" opacity="0.7"/>
+    <circle cx="200" cy="80" r="1.5" fill="white" opacity="0.8"/>
+    <circle cx="280" cy="45" r="1" fill="white" opacity="0.9"/>
+    <circle cx="350" cy="25" r="0.6" fill="white" opacity="0.6"/>
+    <circle cx="420" cy="70" r="1.2" fill="white" opacity="0.8"/>
+    <circle cx="500" cy="30" r="0.8" fill="white" opacity="0.7"/>
+    <circle cx="570" cy="55" r="1.5" fill="white" opacity="0.9"/>
+    <circle cx="640" cy="20" r="1" fill="white" opacity="0.8"/>
+    <circle cx="720" cy="75" r="0.7" fill="white" opacity="0.6"/>
+    <circle cx="750" cy="40" r="1.3" fill="white" opacity="0.9"/>
+    <circle cx="90" cy="130" r="0.9" fill="white" opacity="0.7"/>
+    <circle cx="160" cy="155" r="1.1" fill="white" opacity="0.8"/>
+    <circle cx="470" cy="110" r="0.7" fill="white" opacity="0.6"/>
+    <circle cx="690" cy="140" r="1" fill="white" opacity="0.8"/>
+    <circle cx="760" cy="120" r="0.8" fill="white" opacity="0.7"/>
+    <circle cx="40" cy="200" r="1" fill="white" opacity="0.6"/>
+    <circle cx="600" cy="160" r="1.2" fill="white" opacity="0.8"/>
+  </g>
+
+  <!-- Moon glow halo -->
+  <circle cx="400" cy="200" r="100" fill="url(#moonGlow)" opacity="0.35" filter="url(#moonFilter)"/>
+
+  <!-- Moon -->
+  <circle cx="400" cy="200" r="72" fill="#fffde7" filter="url(#moonFilter)" opacity="0.4"/>
+  <circle cx="400" cy="200" r="62" fill="#fffde7"/>
+  <circle cx="400" cy="200" r="62" fill="url(#moonGlow)" opacity="0.6"/>
+  <!-- Moon craters (subtle) -->
+  <circle cx="375" cy="185" r="8" fill="#fff9c4" opacity="0.5"/>
+  <circle cx="415" cy="210" r="5" fill="#fff9c4" opacity="0.4"/>
+  <circle cx="390" cy="220" r="4" fill="#fff9c4" opacity="0.3"/>
+
+  <!-- Decorative string lines for lanterns -->
+  <line x1="0" y1="300" x2="800" y2="280" stroke="#8b6914" stroke-width="1.5" opacity="0.6"/>
+  <line x1="0" y1="360" x2="800" y2="340" stroke="#8b6914" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- ===== LANTERN 1 (Large Red, left) ===== -->
+  <g transform="translate(110, 290)" filter="url(#glow)">
+    <!-- String -->
+    <line x1="30" y1="-20" x2="30" y2="0" stroke="#8b6914" stroke-width="2"/>
+    <!-- Cap top -->
+    <rect x="12" y="0" width="36" height="10" rx="3" fill="#ffd700"/>
+    <!-- Body -->
+    <ellipse cx="30" cy="55" rx="28" ry="55" fill="url(#lanternRed)"/>
+    <!-- Ribs -->
+    <line x1="10" y1="20" x2="10" y2="90" stroke="#8b0000" stroke-width="1" opacity="0.5"/>
+    <line x1="18" y1="8" x2="18" y2="102" stroke="#8b0000" stroke-width="1" opacity="0.5"/>
+    <line x1="30" y1="5" x2="30" y2="105" stroke="#8b0000" stroke-width="1" opacity="0.5"/>
+    <line x1="42" y1="8" x2="42" y2="102" stroke="#8b0000" stroke-width="1" opacity="0.5"/>
+    <line x1="50" y1="20" x2="50" y2="90" stroke="#8b0000" stroke-width="1" opacity="0.5"/>
+    <!-- Middle ring -->
+    <ellipse cx="30" cy="55" rx="28" ry="6" fill="none" stroke="#ffd700" stroke-width="2.5"/>
+    <!-- Cap bottom -->
+    <rect x="12" y="100" width="36" height="10" rx="3" fill="#ffd700"/>
+    <!-- Tassel -->
+    <line x1="30" y1="110" x2="30" y2="135" stroke="#ffd700" stroke-width="2"/>
+    <line x1="26" y1="127" x2="22" y2="148" stroke="#ffd700" stroke-width="1.5"/>
+    <line x1="30" y1="130" x2="30" y2="152" stroke="#ffd700" stroke-width="1.5"/>
+    <line x1="34" y1="127" x2="38" y2="148" stroke="#ffd700" stroke-width="1.5"/>
+    <!-- Character 福 -->
+    <text x="30" y="62" font-family="serif" font-size="22" fill="#ffd700" text-anchor="middle" font-weight="bold">福</text>
+    <!-- Glow effect -->
+    <ellipse cx="30" cy="55" rx="28" ry="55" fill="#ff4500" opacity="0.12"/>
+  </g>
+
+  <!-- ===== LANTERN 2 (Medium Gold, center-left) ===== -->
+  <g transform="translate(230, 270)" filter="url(#glow)">
+    <line x1="25" y1="-25" x2="25" y2="0" stroke="#8b6914" stroke-width="2"/>
+    <rect x="10" y="0" width="30" height="8" rx="2" fill="#e31e24"/>
+    <ellipse cx="25" cy="44" rx="22" ry="44" fill="url(#lanternGold)"/>
+    <line x1="8" y1="18" x2="8" y2="70" stroke="#b05000" stroke-width="1" opacity="0.5"/>
+    <line x1="15" y1="7" x2="15" y2="81" stroke="#b05000" stroke-width="1" opacity="0.5"/>
+    <line x1="25" y1="4" x2="25" y2="84" stroke="#b05000" stroke-width="1" opacity="0.5"/>
+    <line x1="35" y1="7" x2="35" y2="81" stroke="#b05000" stroke-width="1" opacity="0.5"/>
+    <line x1="42" y1="18" x2="42" y2="70" stroke="#b05000" stroke-width="1" opacity="0.5"/>
+    <ellipse cx="25" cy="44" rx="22" ry="5" fill="none" stroke="#e31e24" stroke-width="2"/>
+    <rect x="10" y="80" width="30" height="8" rx="2" fill="#e31e24"/>
+    <line x1="25" y1="88" x2="25" y2="108" stroke="#e31e24" stroke-width="1.5"/>
+    <line x1="21" y1="101" x2="17" y2="118" stroke="#e31e24" stroke-width="1.5"/>
+    <line x1="25" y1="104" x2="25" y2="122" stroke="#e31e24" stroke-width="1.5"/>
+    <line x1="29" y1="101" x2="33" y2="118" stroke="#e31e24" stroke-width="1.5"/>
+    <text x="25" y="50" font-family="serif" font-size="18" fill="#8b0000" text-anchor="middle" font-weight="bold">喜</text>
+  </g>
+
+  <!-- ===== LANTERN 3 (Large Red, center-right) ===== -->
+  <g transform="translate(490, 295)" filter="url(#glow)">
+    <line x1="30" y1="-15" x2="30" y2="0" stroke="#8b6914" stroke-width="2"/>
+    <rect x="12" y="0" width="36" height="10" rx="3" fill="#ffd700"/>
+    <ellipse cx="30" cy="55" rx="28" ry="55" fill="url(#lanternRed)"/>
+    <line x1="10" y1="20" x2="10" y2="90" stroke="#8b0000" stroke-width="1" opacity="0.5"/>
+    <line x1="18" y1="8" x2="18" y2="102" stroke="#8b0000" stroke-width="1" opacity="0.5"/>
+    <line x1="30" y1="5" x2="30" y2="105" stroke="#8b0000" stroke-width="1" opacity="0.5"/>
+    <line x1="42" y1="8" x2="42" y2="102" stroke="#8b0000" stroke-width="1" opacity="0.5"/>
+    <line x1="50" y1="20" x2="50" y2="90" stroke="#8b0000" stroke-width="1" opacity="0.5"/>
+    <ellipse cx="30" cy="55" rx="28" ry="6" fill="none" stroke="#ffd700" stroke-width="2.5"/>
+    <rect x="12" y="100" width="36" height="10" rx="3" fill="#ffd700"/>
+    <line x1="30" y1="110" x2="30" y2="135" stroke="#ffd700" stroke-width="2"/>
+    <line x1="26" y1="127" x2="22" y2="148" stroke="#ffd700" stroke-width="1.5"/>
+    <line x1="30" y1="130" x2="30" y2="152" stroke="#ffd700" stroke-width="1.5"/>
+    <line x1="34" y1="127" x2="38" y2="148" stroke="#ffd700" stroke-width="1.5"/>
+    <text x="30" y="62" font-family="serif" font-size="22" fill="#ffd700" text-anchor="middle" font-weight="bold">乐</text>
+    <ellipse cx="30" cy="55" rx="28" ry="55" fill="#ff4500" opacity="0.12"/>
+  </g>
+
+  <!-- ===== LANTERN 4 (Small Gold, right) ===== -->
+  <g transform="translate(640, 280)" filter="url(#glow)">
+    <line x1="22" y1="-22" x2="22" y2="0" stroke="#8b6914" stroke-width="2"/>
+    <rect x="8" y="0" width="28" height="7" rx="2" fill="#e31e24"/>
+    <ellipse cx="22" cy="38" rx="20" ry="38" fill="url(#lanternGold)"/>
+    <line x1="6" y1="15" x2="6" y2="61" stroke="#b05000" stroke-width="1" opacity="0.5"/>
+    <line x1="13" y1="5" x2="13" y2="71" stroke="#b05000" stroke-width="1" opacity="0.5"/>
+    <line x1="22" y1="3" x2="22" y2="73" stroke="#b05000" stroke-width="1" opacity="0.5"/>
+    <line x1="31" y1="5" x2="31" y2="71" stroke="#b05000" stroke-width="1" opacity="0.5"/>
+    <line x1="38" y1="15" x2="38" y2="61" stroke="#b05000" stroke-width="1" opacity="0.5"/>
+    <ellipse cx="22" cy="38" rx="20" ry="4" fill="none" stroke="#e31e24" stroke-width="2"/>
+    <rect x="8" y="68" width="28" height="7" rx="2" fill="#e31e24"/>
+    <line x1="22" y1="75" x2="22" y2="93" stroke="#e31e24" stroke-width="1.5"/>
+    <line x1="18" y1="87" x2="14" y2="104" stroke="#e31e24" stroke-width="1.5"/>
+    <line x1="22" y1="90" x2="22" y2="108" stroke="#e31e24" stroke-width="1.5"/>
+    <line x1="26" y1="87" x2="30" y2="104" stroke="#e31e24" stroke-width="1.5"/>
+    <text x="22" y="43" font-family="serif" font-size="16" fill="#8b0000" text-anchor="middle" font-weight="bold">春</text>
+  </g>
+
+  <!-- ===== Decorative border frame ===== -->
+  <!-- Outer border -->
+  <rect x="20" y="20" width="760" height="1060" rx="8" ry="8" fill="none" stroke="#c8920a" stroke-width="2.5" opacity="0.7"/>
+  <!-- Inner border -->
+  <rect x="32" y="32" width="736" height="1036" rx="6" ry="6" fill="none" stroke="#c8920a" stroke-width="1" opacity="0.4"/>
+
+  <!-- Corner ornaments -->
+  <!-- Top-left -->
+  <g transform="translate(20,20)" opacity="0.8">
+    <path d="M0,0 L50,0 M0,0 L0,50" stroke="#c8920a" stroke-width="3" fill="none"/>
+    <circle cx="0" cy="0" r="5" fill="#c8920a"/>
+    <path d="M8,0 Q25,8 0,8" stroke="#c8920a" stroke-width="1.5" fill="none" opacity="0.6"/>
+  </g>
+  <!-- Top-right -->
+  <g transform="translate(780,20)" opacity="0.8">
+    <path d="M0,0 L-50,0 M0,0 L0,50" stroke="#c8920a" stroke-width="3" fill="none"/>
+    <circle cx="0" cy="0" r="5" fill="#c8920a"/>
+    <path d="M-8,0 Q-25,8 0,8" stroke="#c8920a" stroke-width="1.5" fill="none" opacity="0.6"/>
+  </g>
+  <!-- Bottom-left -->
+  <g transform="translate(20,1080)" opacity="0.8">
+    <path d="M0,0 L50,0 M0,0 L0,-50" stroke="#c8920a" stroke-width="3" fill="none"/>
+    <circle cx="0" cy="0" r="5" fill="#c8920a"/>
+  </g>
+  <!-- Bottom-right -->
+  <g transform="translate(780,1080)" opacity="0.8">
+    <path d="M0,0 L-50,0 M0,0 L0,-50" stroke="#c8920a" stroke-width="3" fill="none"/>
+    <circle cx="0" cy="0" r="5" fill="#c8920a"/>
+  </g>
+
+  <!-- ===== Main Title: 元宵节 ===== -->
+  <g filter="url(#softGlow)">
+    <!-- Shadow -->
+    <text x="403" y="498" font-family="'Noto Serif SC', 'SimSun', 'STSong', serif" font-size="96" fill="#8b0000" text-anchor="middle" font-weight="bold" opacity="0.4">元宵節</text>
+    <!-- Main text -->
+    <text x="400" y="495" font-family="'Noto Serif SC', 'SimSun', 'STSong', serif" font-size="96" fill="#ffd700" text-anchor="middle" font-weight="bold">元宵節</text>
+    <!-- Outline -->
+    <text x="400" y="495" font-family="'Noto Serif SC', 'SimSun', 'STSong', serif" font-size="96" fill="none" stroke="#ffaa00" stroke-width="1" text-anchor="middle" font-weight="bold">元宵節</text>
+  </g>
+
+  <!-- Decorative line under title -->
+  <g opacity="0.8">
+    <line x1="180" y1="515" x2="360" y2="515" stroke="#c8920a" stroke-width="1.5"/>
+    <circle cx="170" cy="515" r="4" fill="#c8920a"/>
+    <line x1="440" y1="515" x2="620" y2="515" stroke="#c8920a" stroke-width="1.5"/>
+    <circle cx="630" cy="515" r="4" fill="#c8920a"/>
+    <!-- Diamond center -->
+    <polygon points="400,508 408,515 400,522 392,515" fill="#c8920a"/>
+  </g>
+
+  <!-- ===== Subtitle ===== -->
+  <text x="400" y="570" font-family="'Noto Serif SC', 'SimSun', 'STSong', serif" font-size="34" fill="#ffe082" text-anchor="middle" letter-spacing="8">正月十五</text>
+
+  <!-- ===== Poem / Message ===== -->
+  <g opacity="0.9">
+    <text x="400" y="640" font-family="'Noto Serif SC', 'SimSun', 'STSong', serif" font-size="22" fill="#ffcc80" text-anchor="middle" letter-spacing="4">花好月圆人团圆</text>
+    <text x="400" y="678" font-family="'Noto Serif SC', 'SimSun', 'STSong', serif" font-size="22" fill="#ffcc80" text-anchor="middle" letter-spacing="4">灯火阑珊情意暖</text>
+  </g>
+
+  <!-- Decorative divider -->
+  <g opacity="0.6" transform="translate(400, 710)">
+    <line x1="-120" y1="0" x2="-20" y2="0" stroke="#c8920a" stroke-width="1"/>
+    <line x1="20" y1="0" x2="120" y2="0" stroke="#c8920a" stroke-width="1"/>
+    <circle cx="-130" cy="0" r="3" fill="#c8920a"/>
+    <circle cx="130" cy="0" r="3" fill="#c8920a"/>
+    <!-- Lotus decoration center -->
+    <path d="M0,-10 Q5,-5 0,0 Q-5,-5 0,-10" fill="#c8920a"/>
+    <path d="M0,10 Q5,5 0,0 Q-5,5 0,10" fill="#c8920a"/>
+    <path d="M-10,0 Q-5,5 0,0 Q-5,-5 -10,0" fill="#c8920a"/>
+    <path d="M10,0 Q5,5 0,0 Q5,-5 10,0" fill="#c8920a"/>
+  </g>
+
+  <!-- ===== 汤圆 illustration (rice balls) ===== -->
+  <g transform="translate(400, 780)">
+    <!-- Bowl -->
+    <ellipse cx="0" cy="30" rx="90" ry="20" fill="#c0392b" opacity="0.9"/>
+    <path d="M-90,30 Q-80,80 0,85 Q80,80 90,30 Z" fill="#e74c3c"/>
+    <path d="M-90,30 Q-80,80 0,85 Q80,80 90,30 Z" fill="none" stroke="#c0392b" stroke-width="2"/>
+    <!-- Bowl rim highlight -->
+    <ellipse cx="0" cy="30" rx="90" ry="20" fill="none" stroke="#ff6b6b" stroke-width="3"/>
+    <!-- Pattern on bowl -->
+    <text x="0" y="68" font-family="serif" font-size="18" fill="#ffd700" text-anchor="middle">喜</text>
+    <!-- Tang Yuan (white rice balls) -->
+    <circle cx="-28" cy="22" r="18" fill="#fff9f0" opacity="0.95"/>
+    <circle cx="-28" cy="22" r="18" fill="none" stroke="#f0e0d0" stroke-width="1"/>
+    <circle cx="-8" cy="16" r="16" fill="#fff5e8" opacity="0.95"/>
+    <circle cx="14" cy="22" r="17" fill="#fff9f0" opacity="0.95"/>
+    <circle cx="35" cy="15" r="15" fill="#fff5e8" opacity="0.95"/>
+    <!-- Shine on balls -->
+    <circle cx="-33" cy="17" r="4" fill="white" opacity="0.5"/>
+    <circle cx="-13" cy="11" r="3.5" fill="white" opacity="0.5"/>
+    <circle cx="8" cy="16" r="4" fill="white" opacity="0.5"/>
+    <circle cx="29" cy="10" r="3" fill="white" opacity="0.5"/>
+  </g>
+
+  <!-- ===== Greeting text ===== -->
+  <text x="400" y="920" font-family="'Noto Serif SC', 'SimSun', 'STSong', serif" font-size="38" fill="#ffd700" text-anchor="middle" font-weight="bold" letter-spacing="6" filter="url(#softGlow)">元宵节快乐</text>
+
+  <!-- Year -->
+  <text x="400" y="970" font-family="'Noto Serif SC', 'SimSun', 'STSong', serif" font-size="20" fill="#ffcc80" text-anchor="middle" letter-spacing="4" opacity="0.85">二〇二六年</text>
+
+  <!-- Brand / footer -->
+  <g opacity="0.7">
+    <line x1="280" y1="1010" x2="520" y2="1010" stroke="#c8920a" stroke-width="1" opacity="0.6"/>
+    <text x="400" y="1040" font-family="'Noto Serif SC', 'SimSun', Arial, sans-serif" font-size="16" fill="#ffcc80" text-anchor="middle" letter-spacing="3" opacity="0.8">SOXY CLUB</text>
+  </g>
+
+  <!-- Floating light particles -->
+  <g opacity="0.5">
+    <circle cx="80" cy="450" r="3" fill="#ffcc02">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="450;430;450" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="720" cy="480" r="2.5" fill="#ffcc02">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="480;460;480" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="150" cy="600" r="2" fill="#ff8c00">
+      <animate attributeName="opacity" values="0.2;0.7;0.2" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="600;580;600" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="650" cy="550" r="3" fill="#ff8c00">
+      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="550;530;550" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="820" r="2" fill="#ffcc02">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.8s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="820;800;820" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="850" r="2.5" fill="#ffcc02">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3.2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="850;830;850" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

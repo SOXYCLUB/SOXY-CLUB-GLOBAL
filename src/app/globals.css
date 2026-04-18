@@ -1,71 +1,99 @@
 @import "tailwindcss";
 
 :root {
-  /* SOXY Brand Colors */
-  --color-cream: #F5F0E8;
-  --color-cream-dark: #EBE5DA;
-  --color-green: #2D5A4A;
-  --color-green-light: #3D7A64;
-  --color-red: #A94438;
-  --color-red-dark: #8B3830;
-  --color-text: #1A1A1A;
-  --color-text-light: #666666;
-  --color-white: #FFFFFF;
+  /* Airbnb-inspired Palette */
+  --palette-bg-primary: #ff385c;
+  --palette-bg-primary-pressed: #e00b41;
+  --palette-text-primary: #222222;
+  --palette-text-secondary: #6a6a6a;
+  --palette-text-disabled: rgba(0,0,0,0.24);
+  --palette-text-legal: #428bff;
+  --palette-surface: #ffffff;
+  --palette-surface-secondary: #f2f2f2;
+  --palette-border: #c1c1c1;
+  --palette-error: #c13515;
+  --shadow-card: rgba(0,0,0,0.02) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 6px, rgba(0,0,0,0.1) 0px 4px 8px;
+  --shadow-hover: rgba(0,0,0,0.08) 0px 4px 12px;
 }
 
 @theme inline {
-  --color-cream: var(--color-cream);
-  --color-cream-dark: var(--color-cream-dark);
-  --color-green: var(--color-green);
-  --color-green-light: var(--color-green-light);
-  --color-red: var(--color-red);
-  --color-red-dark: var(--color-red-dark);
+  --color-brand: var(--palette-bg-primary);
+  --color-brand-pressed: var(--palette-bg-primary-pressed);
+  --color-surface: var(--palette-surface);
+  --color-surface-secondary: var(--palette-surface-secondary);
+  --color-text-primary: var(--palette-text-primary);
+  --color-text-secondary: var(--palette-text-secondary);
   --font-sans: var(--font-inter);
 }
 
 body {
-  background: var(--color-cream);
-  color: var(--color-text);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  background: #ffffff;
+  color: #222222;
+  font-family: var(--font-sans), -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif;
 }
 
-/* Custom utility classes */
+/* Airbnb-style card shadow */
+.card-shadow {
+  box-shadow: var(--shadow-card);
+}
+
+/* Primary CTA button — #222222 bg */
 .btn-primary {
-  background-color: var(--color-red);
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 9999px;
+  background-color: #222222;
+  color: #ffffff;
+  padding: 0px 24px;
+  height: 48px;
+  border-radius: 8px;
   font-weight: 500;
-  transition: background-color 0.2s;
+  font-size: 16px;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-primary:hover {
-  background-color: var(--color-red-dark);
+  background-color: #ff385c;
+  box-shadow: var(--shadow-hover);
 }
 
+/* Brand CTA button — Rausch Red */
+.btn-brand {
+  background-color: #ff385c;
+  color: #ffffff;
+  padding: 0px 24px;
+  height: 48px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-brand:hover {
+  background-color: #e00b41;
+  box-shadow: var(--shadow-hover);
+}
+
+/* Secondary button */
 .btn-secondary {
   background-color: transparent;
-  color: var(--color-text);
-  padding: 1rem 2rem;
-  border-radius: 9999px;
-  border: 1px solid var(--color-text);
+  color: #222222;
+  padding: 0px 24px;
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid #222222;
   font-weight: 500;
-  transition: all 0.2s;
+  font-size: 16px;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-text);
-  color: var(--color-cream);
-}
-
-.text-green {
-  color: var(--color-green);
-}
-
-.bg-cream {
-  background-color: var(--color-cream);
-}
-
-.bg-cream-dark {
-  background-color: var(--color-cream-dark);
+  background-color: #f2f2f2;
+  box-shadow: var(--shadow-hover);
 }

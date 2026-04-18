@@ -37,13 +37,13 @@ export default function LanguageSwitcher() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1.5 px-3 py-2 rounded-lg hover:bg-white/50 transition text-sm"
+        className="flex items-center gap-1.5 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition text-sm"
         aria-label="Select language"
       >
         <span>{languageNames[locale].flag}</span>
-        <span className="font-medium text-gray-700">{languageNames[locale].native}</span>
+        <span className="font-medium text-[#222222]">{languageNames[locale].native}</span>
         <svg
-          className={`w-3.5 h-3.5 text-gray-500 transition-transform ${isOpen ? "rotate-180" : ""}`}
+          className={`w-3.5 h-3.5 text-[#6a6a6a] transition-transform ${isOpen ? "rotate-180" : ""}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -53,19 +53,19 @@ export default function LanguageSwitcher() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-36 bg-white rounded-xl shadow-lg border border-gray-100 py-1.5 z-50">
+        <div className="absolute right-0 mt-2 w-36 bg-white rounded-[20px] border border-[#c1c1c1] py-1.5 z-50" style={{ boxShadow: "rgba(0,0,0,0.02) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 6px, rgba(0,0,0,0.1) 0px 4px 8px" }}>
           {routing.locales.map((loc) => (
             <button
               key={loc}
               onClick={() => handleLocaleChange(loc)}
-              className={`w-full flex items-center gap-2.5 px-3 py-2 text-left hover:bg-gray-50 transition text-sm ${
-                locale === loc ? "bg-[#2D5A4A]/5 text-[#2D5A4A]" : "text-gray-700"
+              className={`w-full flex items-center gap-2.5 px-3 py-2 text-left hover:bg-[#f2f2f2] transition text-sm ${
+                locale === loc ? "bg-[#fff0f3] text-[#ff385c]" : "text-[#222222]"
               }`}
             >
               <span>{languageNames[loc].flag}</span>
               <span className="font-medium">{languageNames[loc].native}</span>
               {locale === loc && (
-                <svg className="w-4 h-4 ml-auto text-[#2D5A4A]" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 ml-auto text-[#ff385c]" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               )}

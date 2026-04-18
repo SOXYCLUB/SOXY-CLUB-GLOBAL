@@ -89,7 +89,7 @@ export default function AccountPage() {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center min-h-[60vh]">
-        <p className="text-gray-500 text-lg">{t("loading")}</p>
+        <p className="text-[#6a6a6a] text-base">{t("loading")}</p>
       </div>
     );
   }
@@ -149,20 +149,20 @@ export default function AccountPage() {
   if (!isLoggedIn) {
     return (
       <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h1 className="text-3xl font-bold text-center mb-8">{t("title")}</h1>
+        <h1 className="text-3xl font-bold text-center mb-8 text-[#222222]" style={{ letterSpacing: "-0.44px" }}>{t("title")}</h1>
 
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+        <div className="bg-white rounded-[20px] overflow-hidden" style={{ boxShadow: "rgba(0,0,0,0.02) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 6px, rgba(0,0,0,0.1) 0px 4px 8px" }}>
           {/* Tabs */}
-          <div className="flex border-b border-gray-200">
+          <div className="flex border-b border-[#c1c1c1]">
             <button
               onClick={() => {
                 setAuthTab("login");
                 setError("");
               }}
-              className={`flex-1 py-3 text-center font-medium transition ${
+              className={`flex-1 py-3 text-center font-medium transition text-sm ${
                 authTab === "login"
-                  ? "text-[#2D5A4A] border-b-2 border-[#2D5A4A]"
-                  : "text-gray-500 hover:text-gray-700"
+                  ? "text-[#222222] border-b-2 border-[#222222]"
+                  : "text-[#6a6a6a] hover:text-[#222222]"
               }`}
             >
               {t("tabLogin")}
@@ -172,10 +172,10 @@ export default function AccountPage() {
                 setAuthTab("register");
                 setError("");
               }}
-              className={`flex-1 py-3 text-center font-medium transition ${
+              className={`flex-1 py-3 text-center font-medium transition text-sm ${
                 authTab === "register"
-                  ? "text-[#2D5A4A] border-b-2 border-[#2D5A4A]"
-                  : "text-gray-500 hover:text-gray-700"
+                  ? "text-[#222222] border-b-2 border-[#222222]"
+                  : "text-[#6a6a6a] hover:text-[#222222]"
               }`}
             >
               {t("tabRegister")}
@@ -184,7 +184,7 @@ export default function AccountPage() {
 
           <div className="p-8">
             {error && (
-              <div className="mb-4 p-3 bg-red-50 text-red-600 text-sm rounded-lg">
+              <div className="mb-4 p-3 bg-[#fff0f3] text-[#c13515] text-sm rounded-lg border border-[#ff385c]/20">
                 {error}
               </div>
             )}
@@ -205,7 +205,7 @@ export default function AccountPage() {
                     required
                     value={loginEmail}
                     onChange={(e) => setLoginEmail(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A4A] focus:border-transparent outline-none transition"
+                    className="w-full px-4 py-3 border border-[#c1c1c1] rounded-lg focus:ring-2 focus:ring-[#ff385c] focus:border-[#ff385c] outline-none transition text-[#222222] text-sm"
                     placeholder={t("emailPlaceholder")}
                   />
                 </div>
@@ -222,14 +222,14 @@ export default function AccountPage() {
                     required
                     value={loginPassword}
                     onChange={(e) => setLoginPassword(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A4A] focus:border-transparent outline-none transition"
+                    className="w-full px-4 py-3 border border-[#c1c1c1] rounded-lg focus:ring-2 focus:ring-[#ff385c] focus:border-[#ff385c] outline-none transition text-[#222222] text-sm"
                     placeholder={t("passwordPlaceholder")}
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full bg-[#2D5A4A] text-white py-3 rounded-full font-medium hover:bg-[#234a3c] transition disabled:opacity-50"
+                  className="w-full bg-[#ff385c] text-white py-3 rounded-lg font-medium hover:bg-[#e00b41] transition disabled:opacity-50 text-sm"
                 >
                   {submitting ? t("loading") : t("signIn")}
                 </button>
@@ -238,18 +238,18 @@ export default function AccountPage() {
                   <button
                     type="button"
                     onClick={handleForgotPassword}
-                    className="text-sm text-[#2D5A4A] hover:underline"
+                    className="text-sm text-[#ff385c] hover:underline"
                   >
                     {t("forgotPassword")}
                   </button>
                   {forgotSent && (
-                    <p className="text-sm text-green-600 mt-1">
+                    <p className="text-sm text-[#222222] mt-1">
                       {t("forgotPasswordSent")}
                     </p>
                   )}
                 </div>
 
-                <div className="text-center text-sm text-gray-600">
+                <div className="text-center text-sm text-[#6a6a6a]">
                   {t("noAccount")}{" "}
                   <button
                     type="button"
@@ -257,7 +257,7 @@ export default function AccountPage() {
                       setAuthTab("register");
                       setError("");
                     }}
-                    className="text-[#2D5A4A] font-medium hover:underline"
+                    className="text-[#ff385c] font-medium hover:underline"
                   >
                     {t("tabRegister")}
                   </button>
@@ -282,7 +282,7 @@ export default function AccountPage() {
                       required
                       value={regFirstName}
                       onChange={(e) => setRegFirstName(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A4A] focus:border-transparent outline-none transition"
+                      className="w-full px-4 py-3 border border-[#c1c1c1] rounded-lg focus:ring-2 focus:ring-[#ff385c] focus:border-[#ff385c] outline-none transition text-[#222222] text-sm"
                       placeholder={t("firstNamePlaceholder")}
                     />
                   </div>
@@ -299,7 +299,7 @@ export default function AccountPage() {
                       required
                       value={regLastName}
                       onChange={(e) => setRegLastName(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A4A] focus:border-transparent outline-none transition"
+                      className="w-full px-4 py-3 border border-[#c1c1c1] rounded-lg focus:ring-2 focus:ring-[#ff385c] focus:border-[#ff385c] outline-none transition text-[#222222] text-sm"
                       placeholder={t("lastNamePlaceholder")}
                     />
                   </div>
@@ -317,7 +317,7 @@ export default function AccountPage() {
                     required
                     value={regEmail}
                     onChange={(e) => setRegEmail(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A4A] focus:border-transparent outline-none transition"
+                    className="w-full px-4 py-3 border border-[#c1c1c1] rounded-lg focus:ring-2 focus:ring-[#ff385c] focus:border-[#ff385c] outline-none transition text-[#222222] text-sm"
                     placeholder={t("emailPlaceholder")}
                   />
                 </div>
@@ -335,7 +335,7 @@ export default function AccountPage() {
                     minLength={5}
                     value={regPassword}
                     onChange={(e) => setRegPassword(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A4A] focus:border-transparent outline-none transition"
+                    className="w-full px-4 py-3 border border-[#c1c1c1] rounded-lg focus:ring-2 focus:ring-[#ff385c] focus:border-[#ff385c] outline-none transition text-[#222222] text-sm"
                     placeholder={t("passwordPlaceholder")}
                   />
                 </div>
@@ -353,19 +353,19 @@ export default function AccountPage() {
                     minLength={5}
                     value={regConfirm}
                     onChange={(e) => setRegConfirm(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A4A] focus:border-transparent outline-none transition"
+                    className="w-full px-4 py-3 border border-[#c1c1c1] rounded-lg focus:ring-2 focus:ring-[#ff385c] focus:border-[#ff385c] outline-none transition text-[#222222] text-sm"
                     placeholder={t("confirmPasswordPlaceholder")}
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full bg-[#2D5A4A] text-white py-3 rounded-full font-medium hover:bg-[#234a3c] transition disabled:opacity-50"
+                  className="w-full bg-[#ff385c] text-white py-3 rounded-lg font-medium hover:bg-[#e00b41] transition disabled:opacity-50 text-sm"
                 >
                   {submitting ? t("loading") : t("register")}
                 </button>
 
-                <div className="text-center text-sm text-gray-600">
+                <div className="text-center text-sm text-[#6a6a6a]">
                   {t("hasAccount")}{" "}
                   <button
                     type="button"
@@ -373,7 +373,7 @@ export default function AccountPage() {
                       setAuthTab("login");
                       setError("");
                     }}
-                    className="text-[#2D5A4A] font-medium hover:underline"
+                    className="text-[#ff385c] font-medium hover:underline"
                   >
                     {t("signInLink")}
                   </button>
@@ -592,12 +592,12 @@ export default function AccountPage() {
   function financialBadge(status: string) {
     const s = status.toUpperCase();
     if (s === "PAID")
-      return "bg-green-100 text-green-700";
+      return "bg-[#f2f2f2] text-[#222222]";
     if (s === "PENDING" || s === "AUTHORIZED")
-      return "bg-yellow-100 text-yellow-700";
+      return "bg-[#fff7e0] text-[#6a6a6a]";
     if (s === "REFUNDED" || s === "PARTIALLY_REFUNDED")
-      return "bg-gray-100 text-gray-600";
-    return "bg-gray-100 text-gray-600";
+      return "bg-[#f2f2f2] text-[#6a6a6a]";
+    return "bg-[#f2f2f2] text-[#6a6a6a]";
   }
 
   function financialLabel(status: string) {
@@ -611,12 +611,12 @@ export default function AccountPage() {
 
   function fulfillmentBadge(status: string) {
     const s = status.toUpperCase();
-    if (s === "FULFILLED") return "bg-green-100 text-green-700";
+    if (s === "FULFILLED") return "bg-[#f2f2f2] text-[#222222]";
     if (s === "UNFULFILLED" || s === "IN_PROGRESS")
-      return "bg-yellow-100 text-yellow-700";
+      return "bg-[#fff7e0] text-[#6a6a6a]";
     if (s === "PARTIALLY_FULFILLED")
-      return "bg-blue-100 text-blue-700";
-    return "bg-gray-100 text-gray-600";
+      return "bg-[#e8f0ff] text-[#428bff]";
+    return "bg-[#f2f2f2] text-[#6a6a6a]";
   }
 
   function fulfillmentLabel(status: string) {
@@ -630,33 +630,33 @@ export default function AccountPage() {
 
   // ── Input field helper ──
   const inputClass =
-    "w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A4A] focus:border-transparent outline-none transition";
+    "w-full px-4 py-3 border border-[#c1c1c1] rounded-lg focus:ring-2 focus:ring-[#ff385c] focus:border-[#ff385c] outline-none transition text-[#222222] text-sm";
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       {/* Welcome header */}
       <div className="flex items-center justify-between mb-8">
-        <h1 className="text-3xl font-bold">
+        <h1 className="text-3xl font-bold text-[#222222]" style={{ letterSpacing: "-0.44px" }}>
           {t("welcome", { name: customer?.firstName || "" })}
         </h1>
         <button
           onClick={handleLogout}
-          className="text-sm text-gray-500 hover:text-[#A94438] transition border border-gray-300 px-4 py-2 rounded-full"
+          className="text-sm text-[#6a6a6a] hover:text-[#ff385c] transition border border-[#c1c1c1] px-4 py-2 rounded-lg hover:border-[#ff385c]"
         >
           {t("logout")}
         </button>
       </div>
 
       {/* ── Dashboard Tab Navigation ── */}
-      <div className="flex border-b border-gray-200 mb-8">
+      <div className="flex border-b border-[#c1c1c1] mb-8">
         {(["profile", "addresses", "orders"] as const).map((tab) => (
           <button
             key={tab}
             onClick={() => setDashTab(tab)}
-            className={`flex-1 py-3 text-center font-medium transition ${
+            className={`flex-1 py-3 text-center font-medium transition text-sm ${
               dashTab === tab
-                ? "text-[#2D5A4A] border-b-2 border-[#2D5A4A]"
-                : "text-gray-500 hover:text-gray-700"
+                ? "text-[#222222] border-b-2 border-[#222222]"
+                : "text-[#6a6a6a] hover:text-[#222222]"
             }`}
           >
             {t(
@@ -676,29 +676,29 @@ export default function AccountPage() {
       {dashTab === "profile" && (
         <div className="space-y-6">
           {profileMsg && (
-            <div className="p-3 bg-green-50 text-green-700 text-sm rounded-lg">
+            <div className="p-3 bg-[#f2f2f2] text-[#222222] text-sm rounded-lg border border-[#c1c1c1]">
               {profileMsg}
             </div>
           )}
           {profileError && (
-            <div className="p-3 bg-red-50 text-red-600 text-sm rounded-lg">
+            <div className="p-3 bg-[#fff0f3] text-[#c13515] text-sm rounded-lg border border-[#ff385c]/20">
               {profileError}
             </div>
           )}
 
-          <div className="bg-white rounded-2xl shadow-lg p-6">
+          <div className="bg-white rounded-[20px] p-6" style={{ boxShadow: "rgba(0,0,0,0.02) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 6px, rgba(0,0,0,0.1) 0px 4px 8px" }}>
             {!editingProfile ? (
               <>
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-xl font-semibold">{t("profile")}</h2>
+                  <h2 className="text-[20px] font-semibold text-[#222222]">{t("profile")}</h2>
                   <button
                     onClick={startEditProfile}
-                    className="text-sm text-[#2D5A4A] hover:underline font-medium"
+                    className="text-sm text-[#ff385c] hover:underline font-medium"
                   >
                     {t("editProfile")}
                   </button>
                 </div>
-                <div className="space-y-2 text-gray-600">
+                <div className="space-y-2 text-[#6a6a6a] text-sm">
                   <p>
                     {customer?.firstName} {customer?.lastName}
                   </p>
@@ -708,7 +708,7 @@ export default function AccountPage() {
               </>
             ) : (
               <form onSubmit={handleSaveProfile} className="space-y-4">
-                <h2 className="text-xl font-semibold mb-2">
+                <h2 className="text-[20px] font-semibold mb-2 text-[#222222]">
                   {t("editProfile")}
                 </h2>
                 <div className="grid grid-cols-2 gap-4">
@@ -785,14 +785,14 @@ export default function AccountPage() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="bg-[#2D5A4A] text-white px-6 py-2 rounded-full font-medium hover:bg-[#234a3c] transition disabled:opacity-50"
+                    className="bg-[#ff385c] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#e00b41] transition disabled:opacity-50 text-sm"
                   >
                     {submitting ? t("loading") : t("save")}
                   </button>
                   <button
                     type="button"
                     onClick={() => setEditingProfile(false)}
-                    className="text-gray-500 hover:text-gray-700 px-6 py-2 rounded-full border border-gray-300 transition"
+                    className="text-[#222222] hover:bg-[#f2f2f2] px-6 py-2 rounded-lg border border-[#c1c1c1] transition text-sm"
                   >
                     {t("cancel")}
                   </button>
@@ -802,14 +802,14 @@ export default function AccountPage() {
           </div>
 
           {/* Password change section */}
-          <div className="bg-white rounded-2xl shadow-lg p-6">
+          <div className="bg-white rounded-[20px] p-6" style={{ boxShadow: "rgba(0,0,0,0.02) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 6px, rgba(0,0,0,0.1) 0px 4px 8px" }}>
             {passwordMsg && (
-              <div className="mb-4 p-3 bg-green-50 text-green-700 text-sm rounded-lg">
+              <div className="mb-4 p-3 bg-[#f2f2f2] text-[#222222] text-sm rounded-lg border border-[#c1c1c1]">
                 {passwordMsg}
               </div>
             )}
             {passwordError && (
-              <div className="mb-4 p-3 bg-red-50 text-red-600 text-sm rounded-lg">
+              <div className="mb-4 p-3 bg-[#fff0f3] text-[#c13515] text-sm rounded-lg border border-[#ff385c]/20">
                 {passwordError}
               </div>
             )}
@@ -821,8 +821,8 @@ export default function AccountPage() {
               }}
               className="flex items-center justify-between w-full text-left"
             >
-              <h2 className="text-xl font-semibold">{t("changePassword")}</h2>
-              <span className="text-gray-400 text-xl">
+              <h2 className="text-[20px] font-semibold text-[#222222]">{t("changePassword")}</h2>
+              <span className="text-[#6a6a6a] text-xl">
                 {showPasswordForm ? "\u2212" : "+"}
               </span>
             </button>
@@ -862,7 +862,7 @@ export default function AccountPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="bg-[#2D5A4A] text-white px-6 py-2 rounded-full font-medium hover:bg-[#234a3c] transition disabled:opacity-50"
+                  className="bg-[#ff385c] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#e00b41] transition disabled:opacity-50 text-sm"
                 >
                   {submitting ? t("loading") : t("save")}
                 </button>
@@ -878,12 +878,12 @@ export default function AccountPage() {
       {dashTab === "addresses" && (
         <div className="space-y-6">
           {addressMsg && (
-            <div className="p-3 bg-green-50 text-green-700 text-sm rounded-lg">
+            <div className="p-3 bg-[#f2f2f2] text-[#222222] text-sm rounded-lg border border-[#c1c1c1]">
               {addressMsg}
             </div>
           )}
           {addressError && (
-            <div className="p-3 bg-red-50 text-red-600 text-sm rounded-lg">
+            <div className="p-3 bg-[#fff0f3] text-[#c13515] text-sm rounded-lg border border-[#ff385c]/20">
               {addressError}
             </div>
           )}
@@ -892,7 +892,7 @@ export default function AccountPage() {
           {!showAddressForm && (
             <button
               onClick={startAddAddress}
-              className="bg-[#2D5A4A] text-white px-6 py-2 rounded-full font-medium hover:bg-[#234a3c] transition"
+              className="bg-[#ff385c] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#e00b41] transition text-sm"
             >
               + {t("addAddress")}
             </button>
@@ -900,8 +900,8 @@ export default function AccountPage() {
 
           {/* Address form (inline) */}
           {showAddressForm && (
-            <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h2 className="text-xl font-semibold mb-4">
+            <div className="bg-white rounded-[20px] p-6" style={{ boxShadow: "rgba(0,0,0,0.02) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 6px, rgba(0,0,0,0.1) 0px 4px 8px" }}>
+              <h2 className="text-[20px] font-semibold mb-4 text-[#222222]">
                 {editingAddressId ? t("editAddress") : t("addAddress")}
               </h2>
               <form onSubmit={handleSaveAddress} className="space-y-4">
@@ -1072,7 +1072,7 @@ export default function AccountPage() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="bg-[#2D5A4A] text-white px-6 py-2 rounded-full font-medium hover:bg-[#234a3c] transition disabled:opacity-50"
+                    className="bg-[#ff385c] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#e00b41] transition disabled:opacity-50 text-sm"
                   >
                     {submitting ? t("loading") : t("save")}
                   </button>
@@ -1082,7 +1082,7 @@ export default function AccountPage() {
                       setShowAddressForm(false);
                       setEditingAddressId(null);
                     }}
-                    className="text-gray-500 hover:text-gray-700 px-6 py-2 rounded-full border border-gray-300 transition"
+                    className="text-[#222222] hover:bg-[#f2f2f2] px-6 py-2 rounded-lg border border-[#c1c1c1] transition text-sm"
                   >
                     {t("cancel")}
                   </button>
@@ -1093,7 +1093,7 @@ export default function AccountPage() {
 
           {/* Address cards */}
           {addresses.length === 0 && !showAddressForm ? (
-            <p className="text-gray-400">{t("noAddress")}</p>
+            <p className="text-[#6a6a6a]">{t("noAddress")}</p>
           ) : (
             <div className="grid md:grid-cols-2 gap-4">
               {addresses.map(({ node: addr }) => {
@@ -1101,15 +1101,15 @@ export default function AccountPage() {
                 return (
                   <div
                     key={addr.id}
-                    className="bg-white rounded-2xl shadow-lg p-6 relative"
+                    className="bg-white rounded-[20px] p-6 relative" style={{ boxShadow: "rgba(0,0,0,0.02) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 6px, rgba(0,0,0,0.1) 0px 4px 8px" }}
                   >
                     {isDefault && (
-                      <span className="absolute top-4 right-4 inline-block px-2 py-0.5 text-xs rounded-full bg-green-100 text-green-700 font-medium">
+                      <span className="absolute top-4 right-4 inline-block px-2 py-0.5 text-xs rounded-[14px] bg-[#f2f2f2] text-[#222222] font-semibold">
                         {t("default")}
                       </span>
                     )}
-                    <div className="space-y-1 text-gray-600 mb-4">
-                      <p className="font-medium text-gray-900">
+                    <div className="space-y-1 text-[#6a6a6a] text-sm mb-4">
+                      <p className="font-semibold text-[#222222]">
                         {addr.firstName} {addr.lastName}
                       </p>
                       {addr.phone && <p>{addr.phone}</p>}
@@ -1125,25 +1125,25 @@ export default function AccountPage() {
                     <div className="flex gap-2 flex-wrap">
                       <button
                         onClick={() => startEditAddress(addr)}
-                        className="text-sm text-[#2D5A4A] hover:underline font-medium"
+                        className="text-sm text-[#ff385c] hover:underline font-medium"
                       >
                         {t("editAddress")}
                       </button>
                       {!isDefault && (
                         <>
-                          <span className="text-gray-300">|</span>
+                          <span className="text-[#c1c1c1]">|</span>
                           <button
                             onClick={() => handleDeleteAddress(addr.id)}
                             disabled={submitting}
-                            className="text-sm text-red-500 hover:underline font-medium disabled:opacity-50"
+                            className="text-sm text-[#c13515] hover:underline font-medium disabled:opacity-50"
                           >
                             {t("deleteAddress")}
                           </button>
-                          <span className="text-gray-300">|</span>
+                          <span className="text-[#c1c1c1]">|</span>
                           <button
                             onClick={() => handleSetDefault(addr.id)}
                             disabled={submitting}
-                            className="text-sm text-[#2D5A4A] hover:underline font-medium disabled:opacity-50"
+                            className="text-sm text-[#ff385c] hover:underline font-medium disabled:opacity-50"
                           >
                             {t("setDefault")}
                           </button>
@@ -1164,14 +1164,14 @@ export default function AccountPage() {
       {dashTab === "orders" && (
         <div className="space-y-4">
           {orders.length === 0 ? (
-            <p className="text-gray-400">{t("noOrders")}</p>
+            <p className="text-[#6a6a6a]">{t("noOrders")}</p>
           ) : (
             orders.map(({ node: order }) => {
               const isExpanded = expandedOrder === order.id;
               return (
                 <div
                   key={order.id}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden"
+                  className="bg-white rounded-[20px] overflow-hidden" style={{ boxShadow: "rgba(0,0,0,0.02) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 6px, rgba(0,0,0,0.1) 0px 4px 8px" }}
                 >
                   {/* Collapsed header */}
                   <button
@@ -1180,44 +1180,44 @@ export default function AccountPage() {
                     }
                     className="w-full p-6 text-left flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6"
                   >
-                    <span className="font-medium text-gray-900">
+                    <span className="font-semibold text-[#222222]">
                       #{order.orderNumber}
                     </span>
-                    <span className="text-sm text-gray-500">
+                    <span className="text-sm text-[#6a6a6a]">
                       {new Date(order.processedAt).toLocaleDateString()}
                     </span>
                     <span
-                      className={`inline-block px-2 py-0.5 text-xs rounded-full font-medium ${financialBadge(order.financialStatus)}`}
+                      className={`inline-block px-2 py-0.5 text-xs rounded-[14px] font-semibold ${financialBadge(order.financialStatus)}`}
                     >
                       {financialLabel(order.financialStatus)}
                     </span>
                     <span
-                      className={`inline-block px-2 py-0.5 text-xs rounded-full font-medium ${fulfillmentBadge(order.fulfillmentStatus)}`}
+                      className={`inline-block px-2 py-0.5 text-xs rounded-[14px] font-semibold ${fulfillmentBadge(order.fulfillmentStatus)}`}
                     >
                       {fulfillmentLabel(order.fulfillmentStatus)}
                     </span>
-                    <span className="font-medium text-gray-700 sm:ml-auto">
+                    <span className="font-semibold text-[#222222] sm:ml-auto">
                       {order.totalPriceV2.currencyCode}{" "}
                       {order.totalPriceV2.amount}
                     </span>
-                    <span className="text-gray-400 text-lg">
+                    <span className="text-[#6a6a6a] text-lg">
                       {isExpanded ? "\u25B2" : "\u25BC"}
                     </span>
                   </button>
 
                   {/* Expanded details */}
                   {isExpanded && (
-                    <div className="px-6 pb-6 border-t border-gray-100 pt-4 space-y-4">
+                    <div className="px-6 pb-6 border-t border-[#c1c1c1] pt-4 space-y-4">
                       {/* Line items */}
                       <div>
-                        <h3 className="text-sm font-semibold text-gray-700 mb-2">
+                        <h3 className="text-sm font-semibold text-[#222222] mb-2">
                           {t("orderItems")}
                         </h3>
-                        <ul className="space-y-1 text-sm text-gray-600">
+                        <ul className="space-y-1 text-sm text-[#6a6a6a]">
                           {order.lineItems.edges.map((e, i) => (
                             <li key={i}>
                               {e.node.title}{" "}
-                              <span className="text-gray-400">
+                              <span className="text-[#6a6a6a]">
                                 &times; {e.node.quantity}
                               </span>
                             </li>
@@ -1227,12 +1227,12 @@ export default function AccountPage() {
 
                       {/* Tracking info */}
                       <div>
-                        <h3 className="text-sm font-semibold text-gray-700 mb-2">
+                        <h3 className="text-sm font-semibold text-[#222222] mb-2">
                           {t("trackingInfo")}
                         </h3>
                         {order.successfulFulfillments &&
                         order.successfulFulfillments.length > 0 ? (
-                          <div className="space-y-2 text-sm text-gray-600">
+                          <div className="space-y-2 text-sm text-[#6a6a6a]">
                             {order.successfulFulfillments.map(
                               (ff, fi) => (
                                 <div key={fi}>
@@ -1251,7 +1251,7 @@ export default function AccountPage() {
                                             href={ti.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-[#2D5A4A] hover:underline"
+                                            className="text-[#ff385c] hover:underline"
                                           >
                                             Track &rarr;
                                           </a>
@@ -1264,7 +1264,7 @@ export default function AccountPage() {
                             )}
                           </div>
                         ) : (
-                          <p className="text-sm text-gray-400">
+                          <p className="text-sm text-[#6a6a6a]">
                             {t("noTrackingInfo")}
                           </p>
                         )}
@@ -1276,7 +1276,7 @@ export default function AccountPage() {
                           href={order.statusUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-block text-sm text-[#2D5A4A] hover:underline font-medium"
+                          className="inline-block text-sm text-[#ff385c] hover:underline font-medium"
                         >
                           {t("viewOrderStatus")} &rarr;
                         </a>
